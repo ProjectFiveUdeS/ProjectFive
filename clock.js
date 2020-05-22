@@ -11,3 +11,5 @@ heure = (heure > 12) ? heure - 12 : heure;
 heure = (heure == 0) ? 12 : heure;
 
 var stringHeure = heure + ":" + min + " " + AMPM;
+
+document.getElementById("stringHeure").innerHTML = stringHeure;
