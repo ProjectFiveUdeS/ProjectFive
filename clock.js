@@ -15,6 +15,7 @@ export const toolbar = new class Temps{
 					label: `<span style="font-size: 150%" >00:00:00</span>`,
 					id:'heure',
 					hidden:false,
+					width:100
 				},
 				{},
 				{
@@ -26,11 +27,7 @@ export const toolbar = new class Temps{
 					bands:[
 						{value:33, color:"red"},
 						{value:100, color:"green"},
-					],
-					scale:{
-						step:10,
-						template:"#value#%"
-					}
+					]
 				}
 			]
 		}
