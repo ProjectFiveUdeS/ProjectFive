@@ -1,6 +1,7 @@
 # From https://github.com/github/gitignore/blob/master/Gradle.gitignore
-.gradle
-/build/tmp/
+.gradle/
+/.gradle/
+/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -24,7 +25,7 @@ gradle-app.setting
 
 # Package Files #
 *.jar
-#*.war
+*.war
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
