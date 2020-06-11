@@ -28,10 +28,8 @@ webix.attachEvent(
         webix.i18n.setLocale('fr-FR');   // set notation
         webix.ui(layout.configuration);  // établi les grandes lignes de l'interface usager
         webix.extend($$("main"), webix.ProgressBar);  //Met en place une barre d'information pour la sauvegarde
-        const parameters = Object.fromEntries(new URLSearchParams(window.location.search)) // va chercher les parametres du URL
-        await datatable.loadTrimestre(); //initialize les données à partir de service rest
-        var heure = Clock.updateClock1();
-        $$("heure_actuelle").define("label", heure);
-        $$("heure_actuelle").refresh();
+        //const parameters = Object.fromEntries(new URLSearchParams(window.location.search)) // va chercher les parametres du URL
+        //await datatable.loadTrimestre(); //initialize les données à partir de service res
+        Clock.updateClock();
     }
 )();
