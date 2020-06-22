@@ -5,8 +5,8 @@ export class Clock{
         let heure = currentTime.getHours();
         let min = currentTime.getMinutes();
         let sec = currentTime.getSeconds();
-        const debutExam = new Date(2020, 6, 11, 18, 30, 20); //Valeur convertie en secondes, on récupérera cette valeur dans la DB.
-        const finExam = new Date(2020, 6, 11, 19, 20, 0); //Idem
+        const debutExam = new Date(2020, 6, 18, 11, 0, 20); //Valeur convertie en secondes, on récupérera cette valeur dans la DB.
+        const finExam = new Date(2020, 6, 18, 13, 20, 0); //Idem
         const debutExamEnSec = 3600*debutExam.getHours() + 60*debutExam.getMinutes() + debutExam.getSeconds();
         const finExamEnSec = 3600*finExam.getHours() + 60*finExam.getMinutes() + finExam.getSeconds();
         const currentTimeEnSec = 3600*currentTime.getHours() + 60*currentTime.getMinutes() + currentTime.getSeconds();
@@ -38,7 +38,8 @@ export class Clock{
         minutes2 = (minutes2 < 10 ? "0" : "") + minutes2;
         secondes2 = (secondes2 < 10 ? "0" : "") + secondes2;
 
-        let stringHeure2 = heure2 + ":" + minutes2 + ":" + secondes2;
+        if(currentTimeEnSec <= finExamEnSec)
+            let stringHeure2 = heure2 + ":" + minutes2 + ":" + secondes2;
 
         $$("temps_restant").setValue(stringHeure2);
         $$("temps_restant").refresh();
