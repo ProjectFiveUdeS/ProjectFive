@@ -38,10 +38,10 @@ export class Clock{
         minutes2 = (minutes2 < 10 ? "0" : "") + minutes2;
         secondes2 = (secondes2 < 10 ? "0" : "") + secondes2;
 
-        if(currentTimeEnSec <= finExamEnSec)
-            let stringHeure2 = heure2 + ":" + minutes2 + ":" + secondes2;
+        let stringHeure2 = heure2 + ":" + minutes2 + ":" + secondes2;
 
-        $$("temps_restant").setValue(stringHeure2);
+        if(currentTimeEnSec <= finExamEnSec)
+            $$("temps_restant").setValue(stringHeure2);
         $$("temps_restant").refresh();
     }
 }
