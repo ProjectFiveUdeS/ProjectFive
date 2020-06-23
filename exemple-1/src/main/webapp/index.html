@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>rest-mybatis</title>
+</head>
+<body style="padding: 10px;">
+<form action="api/etudiant" id="jsonTest">
+    <label>Numéro:</label>
+    <input type="text" name="id">
+    <button type="submit">Submit</button>
+</form>
+<form action="api/insert_trimestre">
+    <button type="submit">Insertion de trimestres</button>
+</form>
+<button onclick="test()" id="button">hello</button>
+<button onclick="api/etudiant">
+    test
+</button>
+<script>
+    var el_up = document.getElementById("jsonTest");
+    var list = [
+        {"col_1":"val_11"}
+    ]
+    function test()
+    {
+        document.getElementById("button").innerText="wow";
+    }
+</script>
+</body>
+</html>
