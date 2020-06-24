@@ -12,7 +12,12 @@
       FROM
         etudiant
       where
-        cip = #{id};
-
+        cip = #{cip};
     </select>
+
+    <insert id="insertEtudiant">
+      insert into etudiant
+      values (#{cip}, #{nom}, #{prenom}, #{adapte});
+    </insert>
+
 </mapper>

@@ -38,13 +38,14 @@ public class etudiant {
         this.nom = nom;
     }
 
+    //si c'est un variable string ou semblable il faut ajouter des guillemets ""
     @Override
     public String toString() {
-        return "Etudiant{" +
-                "cip=" + cip +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", adapte='" + adapte + '\'' +
+        return "{" +
+                "\"cip\":\"" + cip + "\"" +
+                ", \"nom\":\"" + nom + "\"" +
+                ", \"prenom\":\"" + prenom + "\"" +
+                ", \"adapte\":" + adapte +
                 '}';
     }
 }
