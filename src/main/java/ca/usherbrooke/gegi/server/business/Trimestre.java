@@ -3,27 +3,17 @@ import java.util.Date;
 
 public class Trimestre {
 
-    private String trimestreId;
+    private String trimestre_id;
     private String trimestre;
     private Date debut;
     private Date fin;
     private Date inscription;
 
-    public String getTrimestreId() {
-        return trimestreId;
-    }
+    public String getTrimestre_id() {return trimestre_id; }
+    public void setTrimestre_id(String trimestre_id) { this.trimestre_id = trimestre_id; }
 
-    public void setTrimestreId(String trimestreId) {
-        this.trimestreId = trimestreId;
-    }
-
-    public String getTrimestre() {
-        return trimestre;
-    }
-
-    public void setTrimestre(String trimestre) {
-        this.trimestre = trimestre;
-    }
+    public String getTrimestre() { return trimestre; }
+    public void setTrimestre(String trimestre) { this.trimestre = trimestre; }
 
     public Date getDebut() {
         return debut;
@@ -51,6 +41,6 @@ public class Trimestre {
 
     @Override
     public String toString() {
-        return getTrimestreId() + " " + getTrimestre() + " " + getDebut() + " " + getFin();
+        return getTrimestre_id() + " " + getTrimestre() + " " + getDebut() + " " + getFin();
     }
 }

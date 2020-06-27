@@ -30,7 +30,7 @@ webix.attachEvent(
         webix.ui(layout.configuration);  // établi les grandes lignes de l'interface usager
         webix.extend($$("main"), webix.ProgressBar);  //Met en place une barre d'information pour la sauvegarde
         const parameters = Object.fromEntries(new URLSearchParams(window.location.search)) // va chercher les parametres du URL
-        await datatable.loadTrimestre(); //initialize les données à partir de service rest
+        await datatable.loadEtudiant(); //initialize les données à partir de service rest
         let clock = new Clock();
         setInterval(()=>clock.updateClock(),1000);
     }

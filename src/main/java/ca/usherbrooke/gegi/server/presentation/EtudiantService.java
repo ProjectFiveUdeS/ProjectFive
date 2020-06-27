@@ -20,6 +20,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 @Path("")
@@ -37,10 +38,11 @@ public class EtudiantService {
     @Path("etudiant")
     @Produces("application/json")
     public List<etudiant> getEtudiant(@QueryParam("cip") String cip) {
-      //  System.out.println(httpServletRequest.getUserPrincipal().getName());
-        listeEtudiant = etudiantMapper.select(cip);
+        if (cip == null) {
+            cip = "*";
+        }
 
-        return listeEtudiant;
+        return etudiantMapper.select(cip);
     }
 
 

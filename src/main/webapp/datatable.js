@@ -17,43 +17,40 @@ export const datatable = new class Datatable {
             data: [],
             columns: [
                 {
-                    id: "trimestreId",
-                    header: "id",
+                    id: "cip",
+                    header: "CIP_Étudiant",
                     width: 75,
-                    tooltip: "trimestre ID",
+                    tooltip: "CIP_Étudiant",
                     hidden: false,
                 },
                 {
-                    id: "trimestre", header: "Trimestre",
+                    id: "prenom",
+                    header: "Prénom",
                     hidden: false,
                     width: 200,
                     fillspace: true,
                 },
                 {
-                    id: "debut",
-                    header: "debut",
-                    template: obj => {
-                        return moment(obj.debut).format('D MMM');
-                    },
-                    width: 300,
+                    id: "nom",
+                    header: "Nom de Famille",
+                    width: 200,
+                    fillspace: true,
                 },
                 {
-                    id: "fin",
-                    header: "fin",
-                    template: obj => {
-                        return moment(obj.fin).format('D MMM YYYY');
-                    },
+                    id: "adapte",
+                    header: "Mesures Adaptées",
                     width: 300,
+                    fillspace: true,
                 },
             ],
         }
     }
 
-    async loadTrimestre() {
+    async loadEtudiant() {
         $$("main").showProgress({type: 'top'});
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/trimestre")
+            .get("api/etudiant")
             .then(data => data.json())
             .then(data => {
                 $$(datatable.id).clearAll();
@@ -64,7 +61,7 @@ export const datatable = new class Datatable {
             .catch((reason) => {
                 console.error(reason);
                 webix.modalbox({
-                    title: 'Voir des trimestres',
+                    title: 'Voir des étudiants',
                     text: "Paramètres inconsistants pour accéder à la base de données de présence",
                     type: 'alert-error',
                 });

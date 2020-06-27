@@ -9,10 +9,16 @@
         nom,
         prenom,
         adapte
-      FROM
-        etudiant
-      where
-        cip = #{cip};
+      FROM etudiant WHERE cip = #{cip};
+    </select>
+
+    <select id="selectAll" resultType="etudiant">
+      SELECT
+        cip,
+        nom,
+        prenom,
+        adapte
+      FROM etudiant
     </select>
 
     <insert id="insertEtudiant">
