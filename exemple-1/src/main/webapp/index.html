@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>rest-mybatis</title>
+</head>
+<body style="padding: 10px;">
+<form action="api/etudiant" onsubmit='return test1(this)'>
+    <label id="button1">Numéro:</label>
+    <input type="text"  name="cip">
+    <button type="submit" onclick="test1()">Submit</button>
+</form>
+
+<form action="api/insertEtudiant">
+    <button type="submit">Insertion d'etudiant</button>
+</form>
+
+<button id="but">
+    test
+</button>
+
+<script>
+
+    function test1(form) {
+        document.getElementById("but").innerHTML = "api/etudiant";
+    }
+</script>
+</body>
+</html>
