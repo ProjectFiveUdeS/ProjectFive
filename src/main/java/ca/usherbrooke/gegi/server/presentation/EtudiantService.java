@@ -41,8 +41,8 @@ public class EtudiantService {
         if (cip == null) {
             cip = "*";
         }
-
-        return etudiantMapper.select(cip);
+        List<etudiant> etudiants = etudiantMapper.select(cip);
+        return etudiants;
     }
 
 
@@ -64,7 +64,7 @@ public class EtudiantService {
 
             Client client = ClientBuilder.newClient();
             //WebTarget target = client.target("http://zeus.gel.usherbrooke.ca:8080/ms/rest/trimestre?inscription=2017-01-01");
-            WebTarget target = client.target("http://localhost:8080/exemple-1/api/etudiant?cip=robk1234");
+            WebTarget target = client.target("http://localhost:8080/ProjectFive/api/etudiant?cip=robk1234");
             Invocation.Builder  builder = target.request(MediaType.APPLICATION_JSON);
             Response response = builder.get();
 

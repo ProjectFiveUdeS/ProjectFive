@@ -1,7 +1,6 @@
 package ca.usherbrooke.gegi.server.persistence;
 
-
-import ca.usherbrooke.gegi.server.business.Trimestre;
+import ca.usherbrooke.gegi.server.business.etudiant;
 import org.apache.ibatis.annotations.Param;
 import org.mybatis.cdi.Mapper;
 
@@ -10,8 +9,8 @@ import java.util.List;
 
 @SuppressWarnings("CdiManagedBeanInconsistencyInspection")
 @Mapper
-public interface TrimestreMapper {
+public interface LocalMapper {
 
-    List<Trimestre> select();
-    void insertTrimestre(@Param("trimestre") Trimestre trimestre);
+    List<Local> select(@Param("numero_local") String numero_local);
+    void insertLocal(@Param("local") Local local);
 }
