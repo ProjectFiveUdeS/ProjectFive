@@ -12,5 +12,6 @@ import java.util.List;
 public interface EtudiantMapper {
 
     List<etudiant> select(@Param("cip") String cip);
+    List<etudiant> selectAll();
     void insertEtudiant(@Param("etudiant") etudiant etud);
 }

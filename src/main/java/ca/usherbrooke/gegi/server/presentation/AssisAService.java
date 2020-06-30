@@ -40,7 +40,15 @@ public class AssisAService {
     public List<assis_a> getAssisA(@QueryParam("cip") String cip, @QueryParam("id_cours_examen") String id_cours_examen) {
 
         List<assis_a> assisA = assisAMapper.select(cip, id_cours_examen);
-        return etudiants;
+        return assisA;
+    }
+
+    @GET
+    @Path("tous_assis_a")
+    @Produces("application/json")
+    public List<assis_a> getTousAssisA(){
+        List<assis_a> assisA = assisAMapper.selectAll();
+        return assisA;
     }
 
 

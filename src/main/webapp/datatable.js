@@ -1,10 +1,7 @@
-
-
-
 export const datatable = new class Datatable {
 
 
-     get id() {
+    get id() {
         return "team";
     }
 
@@ -17,40 +14,46 @@ export const datatable = new class Datatable {
             data: [],
             columns: [
                 {
-                    id: "cip",
-                    header: "CIP_Étudiant",
+                    id: "id_sortie",
+                    header: "Numéro sortie",
                     width: 75,
-                    tooltip: "CIP_Étudiant",
+                    tooltip: "Numéro sortie",
                     hidden: false,
                 },
                 {
-                    id: "prenom",
-                    header: "Prénom",
+                    id: "type_sortie",
+                    header: "Type de sortie",
                     hidden: false,
                     width: 200,
                     fillspace: true,
                 },
                 {
-                    id: "nom",
-                    header: "Nom de Famille",
+                    id: "heure_debut",
+                    header: "Début sortie",
                     width: 200,
                     fillspace: true,
                 },
                 {
-                    id: "adapte",
-                    header: "Mesures Adaptées",
-                    width: 300,
+                    id: "heure_fin",
+                    header: "Fin sortie",
+                    width: 200,
                     fillspace: true,
                 },
+                {
+                    id: "cip",
+                    header: "CIP",
+                    width: 200,
+                    fillspace: true,
+                }
             ],
         }
     }
 
-    async loadEtudiant() {
+    async loadSorties() {
         $$("main").showProgress({type: 'top'});
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/etudiant")
+            .get("api/toutesSorties")
             .then(data => data.json())
             .then(data => {
                 $$(datatable.id).clearAll();
@@ -67,5 +70,4 @@ export const datatable = new class Datatable {
                 });
             });
     }
-
 }

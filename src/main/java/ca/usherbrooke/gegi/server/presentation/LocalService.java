@@ -43,7 +43,13 @@ public class LocalService {
         return locaux;
     }
 
-
+    @GET
+    @Path("locaux")
+    @Produces("application/json")
+    public List<local> getLocaux(){
+        List<local> locaux = localMapper.selectAll();
+        return locaux;
+    }
 
     private class JSONObject {
     }

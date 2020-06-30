@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ca.usherbrooke.gegi.server.persistence.LocalMapper">
+    <select id="select" resultType="local">
+      SELECT
+        numero_local,
+        nombre_places,
+        description_local
+      FROM s3iprojet05.public.local WHERE numero_local = #{numero_local};
+    </select>
+
+    <select id="selectAll" resultType="local">
+      SELECT
+        numero_local,
+        nombre_places,
+        description_local
+      FROM s3iprojet05.public.local;
+    </select>
+
+    <insert id="insertLocal">
+      insert into s3iprojet05.public.local
+      values (#{numero_local}, #{nombre_places}, #{description_local});
+    </insert>
+
+</mapper>

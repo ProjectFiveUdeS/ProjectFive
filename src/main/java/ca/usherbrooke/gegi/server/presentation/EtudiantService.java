@@ -38,10 +38,15 @@ public class EtudiantService {
     @Path("etudiant")
     @Produces("application/json")
     public List<etudiant> getEtudiant(@QueryParam("cip") String cip) {
-        if (cip == null) {
-            cip = "*";
-        }
         List<etudiant> etudiants = etudiantMapper.select(cip);
+        return etudiants;
+    }
+
+    @GET
+    @Path("etudiants")
+    @Produces("application/json")
+    public List<etudiant> getEtudiants(){
+        List<etudiant> etudiants = etudiantMapper.selectAll();
         return etudiants;
     }
 

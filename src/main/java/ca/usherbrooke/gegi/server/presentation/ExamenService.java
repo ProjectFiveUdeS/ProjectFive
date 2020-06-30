@@ -43,6 +43,14 @@ public class ExamenService {
         return examens;
     }
 
+    @GET
+    @Path("examens")
+    @Produces("application/json")
+    public List<examen> getExamens(){
+        List<examen> examens = examenMapper.selectAll();
+        return examens;
+    }
+
 
 
     private class JSONObject {

@@ -29,7 +29,7 @@ export const bottom = new class Bottom  {
     }
 
     message() {
-        const text  = "Produit par les gentils étudiants du programme de génie informatique de la Faculté de génie";
+        const text  = "Produit par l'équipe 5 du programme de génie informatique de la Faculté de génie";
         const color =  "color:grey;";
         return   `<span style="font-size: 90%; ${color}" >${text}</span>`;
     }

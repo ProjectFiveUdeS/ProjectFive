@@ -42,6 +42,14 @@ public class PlaceService {
         return places;
     }
 
+    @GET
+    @Path("places")
+    @Produces("application/json")
+    public List<place> getPlaces(){
+        List<place> places = placeMapper.selectAll();
+        return places;
+    }
+
 
 
     private class JSONObject {

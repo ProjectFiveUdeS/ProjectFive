@@ -1,6 +1,6 @@
 package ca.usherbrooke.gegi.server.persistence;
 
-import ca.usherbrooke.gegi.server.business.etudiant;
+import ca.usherbrooke.gegi.server.business.place;
 import org.apache.ibatis.annotations.Param;
 import org.mybatis.cdi.Mapper;
 
@@ -11,6 +11,7 @@ import java.util.List;
 @Mapper
 public interface PlaceMapper {
 
-    List<Place> select(@Param("numero_chaise") int numero_chaise, @Param("numero_local") String numero_local);
-    void insertPlace(@Param("place") Place place);
+    List<place> select(@Param("numero_chaise") int numero_chaise, @Param("numero_local") String numero_local);
+    List<place> selectAll();
+    void insertPlace(@Param("place") place place);
 }

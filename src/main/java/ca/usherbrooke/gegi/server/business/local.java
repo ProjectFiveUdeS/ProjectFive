@@ -34,7 +34,7 @@ public class local {
     public String toString() {
         return "{" +
                 "\"numero_local\":\"" + numero_local + "\"" +
-                ", \"nombre_places\":\"" + nombre_places + "\"" +
+                ", \"nombre_places\":" + nombre_places +
                 ", \"description_local\":\"" + description_local + "\"" +
                 '}';
     }

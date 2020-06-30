@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ca.usherbrooke.gegi.server.persistence.ExamenMapper">
+    <select id="select" resultType="examen">
+      SELECT
+        id_cours_examen,
+        nbr_etudiants_prevu,
+        nbr_etudiants_presents,
+        debut,
+        debut_adapte,
+        tiers_temps,
+        tiers_temps_adapte,
+        fin,
+        fin_adapte,
+        date_examen
+      FROM examen WHERE id_cours_examen = #{id_cours_examen};
+    </select>
+
+    <select id="selectAll" resultType="examen">
+      SELECT
+        id_cours_examen,
+        nbr_etudiants_prevu,
+        nbr_etudiants_presents,
+        debut,
+        debut_adapte,
+        tiers_temps,
+        tiers_temps_adapte,
+        fin,
+        fin_adapte,
+        date_examen
+      FROM examen;
+    </select>
+
+    <insert id="insertExamen">
+      insert into examen
+      values (#{id_cours_examen}, #{nbr_etudiants_prevu}, #{nbr_etudiants_presents},
+       #{debut}, #{debut_adapte}, #{tiers_temps}, #{tiers_temps_adapte},
+       #{fin}, #{fin_adapte}, #{date_examen});
+    </insert>
+
+</mapper>

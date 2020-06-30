@@ -42,6 +42,14 @@ public class SortiesService {
         return sorties;
     }
 
+    @GET
+    @Path("toutesSorties")
+    @Produces("application/json")
+    public List<sorties> getToutesSorties(){
+        List<sorties> sorties = sortiesMapper.selectAll();
+        return sorties;
+    }
+
 
 
     private class JSONObject {
@@ -57,11 +65,11 @@ public class SortiesService {
 
     @GET
     @Path("insertSorties")
-    public void insertSorties() {
+    public void insertSorties(){
 
         Client client = ClientBuilder.newClient();
         //WebTarget target = client.target("http://zeus.gel.usherbrooke.ca:8080/ms/rest/trimestre?inscription=2017-01-01");
-        WebTarget target = client.target("http://localhost:8080/ProjectFive/api/sorties");
+        WebTarget target = client.target("http://localhost:8080/ProjectFive/api/sorties?cip=girm1235");
         Invocation.Builder  builder = target.request(MediaType.APPLICATION_JSON);
         Response response = builder.get();
 
@@ -69,7 +77,6 @@ public class SortiesService {
         for(sorties sor : sortiesList)
         {
             sortiesMapper.insertSorties(sor);
-            System.out.println(sor);
         }
     }
 }

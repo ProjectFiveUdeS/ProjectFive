@@ -102,7 +102,7 @@ public class examen {
                 ", \"debut\":" + debut + "\"" + ", \"debut_adapte\":" +
                 debut_adapte + "\"" + ", \"fin\":\"" + fin + "\"" + ", \"fin_adapte\":"
                 + fin_adapte + "\"" + ", \"tiers_temps\":\"" + tiers_temps + "\"" + ", \"tiers_temps_adapte\":"
-                + tiers_temps_adapte + "\"" + ", \date_examen\":\"" + date_examen +
+                + tiers_temps_adapte + "\"" + ", \"date_examen\":\"" + date_examen +
                 '}';
     }
 }

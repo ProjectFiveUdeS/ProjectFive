@@ -18,7 +18,7 @@
         nom,
         prenom,
         adapte
-      FROM etudiant
+      FROM etudiant;
     </select>
 
     <insert id="insertEtudiant">

@@ -25,7 +25,7 @@ public class place {
     public String toString() {
         return "{" +
                 "\"numero_local\":\"" + numero_local + "\"" +
-                ", \"numero_chaise\":\"" + numero_chaise + "\"" +
+                ", \"numero_chaise\":" + numero_chaise +
                 '}';
     }
 }
