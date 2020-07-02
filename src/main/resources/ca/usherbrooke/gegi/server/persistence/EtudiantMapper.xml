@@ -23,7 +23,7 @@
 
     <insert id="insertEtudiant">
       insert into etudiant
-      values (#{cip}, #{nom}, #{prenom}, #{adapte});
+      values (#{etudiant.cip}, #{etudiant.nom}, #{etudiant.prenom}, #{etudiant.adapte});
     </insert>
 
 </mapper>

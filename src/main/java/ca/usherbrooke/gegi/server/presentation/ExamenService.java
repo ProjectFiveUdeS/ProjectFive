@@ -8,10 +8,7 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.stream.JsonParser;
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
@@ -64,11 +61,11 @@ public class ExamenService {
     }*/
 
 
-    @GET
+    @PUT
     @Path("insertExamen")
-    public void insertExamen() {
+    public void insertExamen(examen exa) {
 
-        Client client = ClientBuilder.newClient();
+        /*Client client = ClientBuilder.newClient();
         //WebTarget target = client.target("http://zeus.gel.usherbrooke.ca:8080/ms/rest/trimestre?inscription=2017-01-01");
         WebTarget target = client.target("http://localhost:8080/ProjectFive/api/examen");
         Invocation.Builder  builder = target.request(MediaType.APPLICATION_JSON);
@@ -76,9 +73,9 @@ public class ExamenService {
 
         List<examen> examenList = response.readEntity((new GenericType<List<examen>>(){}));
         for(examen exa : examenList)
-        {
+        {*/
             examenMapper.insertExamen(exa);
-            System.out.println(exa);
-        }
+           // System.out.println(exa);
+        //}
     }
 }

@@ -19,7 +19,7 @@
 
     <insert id="insertPlace">
       insert into place
-      values (#{numero_local}, #{numero_chaise});
+      values (#{place.numero_local}, #{place.numero_chaise});
     </insert>
 
 </mapper>

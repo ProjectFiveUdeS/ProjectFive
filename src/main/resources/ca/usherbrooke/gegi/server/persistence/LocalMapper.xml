@@ -21,7 +21,7 @@
 
     <insert id="insertLocal">
       insert into s3iprojet05.public.local
-      values (#{numero_local}, #{nombre_places}, #{description_local});
+      values (#{local.numero_local}, #{local.nombre_places}, #{local.description_local});
     </insert>
 
 </mapper>

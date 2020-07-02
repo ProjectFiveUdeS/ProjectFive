@@ -25,8 +25,8 @@
 
     <insert id="insertEtudiant">
       insert into assis_a
-      values (#{cip}, #{presence}, #{numero_chaise}, #{numero_local},
-      #{id_cours_examen});
+      values (#{assis_a.cip}, #{assis_a.presence}, #{assis_a.numero_chaise}, #{assis_a.numero_local},
+      #{assis_a.id_cours_examen});
     </insert>
 
 </mapper>

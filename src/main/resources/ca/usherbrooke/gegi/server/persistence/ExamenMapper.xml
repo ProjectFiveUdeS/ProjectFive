@@ -35,9 +35,9 @@
 
     <insert id="insertExamen">
       insert into examen
-      values (#{id_cours_examen}, #{nbr_etudiants_prevu}, #{nbr_etudiants_presents},
-       #{debut}, #{debut_adapte}, #{tiers_temps}, #{tiers_temps_adapte},
-       #{fin}, #{fin_adapte}, #{date_examen});
+      values (#{examen.id_cours_examen}, #{examen.nbr_etudiants_prevu}, #{examen.nbr_etudiants_presents},
+       #{examen.debut}, #{examen.debut_adapte}, #{examen.tiers_temps}, #{examen.tiers_temps_adapte},
+       #{examen.fin}, #{examen.fin_adapte}, #{examen.date_examen});
     </insert>
 
 </mapper>

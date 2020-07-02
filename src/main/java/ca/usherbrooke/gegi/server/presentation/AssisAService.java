@@ -8,10 +8,7 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.stream.JsonParser;
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
@@ -64,11 +61,11 @@ public class AssisAService {
     }*/
 
 
-    @GET
+    @PUT
     @Path("insertAssisA")
-    public void insertAssisA() {
+    public void insertAssisA(assis_a ass) {
 
-        Client client = ClientBuilder.newClient();
+        /*Client client = ClientBuilder.newClient();
         //WebTarget target = client.target("http://zeus.gel.usherbrooke.ca:8080/ms/rest/trimestre?inscription=2017-01-01");
         WebTarget target = client.target("http://localhost:8080/ProjectFive/api/assis_a");
         Invocation.Builder  builder = target.request(MediaType.APPLICATION_JSON);
@@ -76,9 +73,9 @@ public class AssisAService {
 
         List<assis_a> assis_aList = response.readEntity((new GenericType<List<assis_a>>(){}));
         for(assis_a ass : assis_aList)
-        {
+        {*/
             assisAMapper.insertAssisA(ass);
-            System.out.println(ass);
-        }
+           // System.out.println(ass);
+        //}
     }
 }
