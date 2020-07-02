@@ -25,7 +25,7 @@
 
     <insert id="insertSorties">
       insert into sorties
-      values (((SELECT MAX(id_sortie) FROM sorties) + 1), #{type_sortie}, #{heure_debut}, #{heure_fin}, #{cip});
+      values (((SELECT MAX(id_sortie) FROM sorties) + 1), #{sorties.type_sortie}, #{sorties.heure_debut}::timestamp, #{sorties.heure_fin}::timestamp, #{sorties.cip});
     </insert>
 
 </mapper>

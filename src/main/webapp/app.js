@@ -2,7 +2,6 @@ import {datatable} from "./datatable.js";
 import {layout} from "./layout.js";
 import {Clock} from "./clock.js"
 import {surveillant} from "./surveillant.js";
-import {config} from "./config.js";
 
 webix.attachEvent(
     'onAjaxError',
@@ -35,13 +34,13 @@ webix.attachEvent(
         await datatable.loadSorties(); //initialize les données à partir de service rest
         let surv = new surveillant();
         let clock = new Clock();
-        const sortie = {
+        /*const sortie = {
             type_sortie: 0,
-            heure_debut: "00:00:00",
-            heure_fin: "05:00:00",
+            heure_debut: "2020-12-15 00:00:00",
+            heure_fin: "2020-12-15 05:00:00",
             cip: "girm1235"
         }
-        await config.insertSortie(sortie);
+        await config.insertSortie(sortie);*/
         setInterval(()=>clock.updateClock(),1000);
     }
 )();

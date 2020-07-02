@@ -1,4 +1,3 @@
-
 import { datatable } from "./datatable.js";
 import { toolbar } from "./toolbar.js";
 
@@ -54,25 +53,25 @@ export const config = new class Config {
                             elements: [
                                 {
                                     view: "text",
-                                    id: "id",
-                                    name: "trimestre",
-                                    label: "id du trimestre",
+                                    id: "type_sortie",
+                                    name: "type sortie",
+                                    label: "Type de sortie",
                                     labelWidth: 280,
                                     inputWidth: 375,
                                 },
                                 {
                                     view: "text",
-                                    id: "nom",
-                                    name: "trimestre",
-                                    label: "nom du trimestre",
+                                    id: "cip",
+                                    name: "cip",
+                                    label: "CIP de l'étudiant",
                                     labelWidth: 280,
                                     inputWidth: 500,
                                 },
                                 {
                                     view: "datepicker",
                                     id: "debut",
-                                    name: "début",
-                                    label:" Date de début du trimestre",
+                                    name: "debut",
+                                    label:"Début de la sortie",
                                     labelWidth: 280,
                                     inputAlign: "right",
                                     inputWidth: 450,
@@ -80,7 +79,7 @@ export const config = new class Config {
                                 {
                                     view: "datepicker",
                                     id: "fin",
-                                    label: "Date de fin du trimestre",
+                                    label: "Fin de la sortie",
                                     name: "fin",
                                     labelWidth: 280,
                                     inputAlign: "right",
@@ -104,18 +103,18 @@ export const config = new class Config {
                                         {
                                             view: "button",
                                             id: "apply",
-                                            label: "Sauvegarder",
+                                            label: "Ajouter sortie",
                                             width: 110,
                                             icon: "mdi  mdi-48px mdi-content-save-settings-outline",
                                             disabled: true,  //c'est la raison pour laquelle  c'est grisé
                                             click: () => {
-                                                const trimestre = {
-                                                    trimestreId: $$("id").getValue(),
-                                                    trimestre: $$("nom").getValue(),
-                                                    debut: $$("debut").getValue(),
-                                                    fin: $$("fin").getValue(),
+                                                const sortie = {
+                                                    type_sortie: $$("type_sortie").getValue(),
+                                                    heure_debut: $$("debut").getValue(),
+                                                    heure_fin: $$("fin").getValue(),
+                                                    cip: $$("cip").getValue(),
                                                 };
-                                                this.insertTrimestre(trimestre);
+                                                this.insertSortie(sortie);
                                             }
                                         }]
                                 }
@@ -144,7 +143,6 @@ export const config = new class Config {
                     webix.message({type: "success", text: "Sortie insérée"});
                     webix.ui(datatable.configuration, $$(datatable.id));
                     await datatable.loadSorties();
-                    $$(this.id).close();
                 })
                 .catch((reason) => {
                     console.error(reason);
