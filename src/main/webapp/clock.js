@@ -44,4 +44,9 @@ export class Clock{
             $$("temps_restant").setValue(stringHeure2);
         $$("temps_restant").refresh();
     }
+
+    setLabel(label){
+        $$("heure_actuelle").setValue(label);
+        $$("heure_actuelle").refresh();
+    }
 }

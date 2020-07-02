@@ -41,6 +41,9 @@ webix.attachEvent(
             cip: "girm1235"
         }
         await config.insertSortie(sortie);*/
-        setInterval(()=>clock.updateClock(),1000);
+        await surv.selectExamen("gen280");
+        clock.setLabel(surv.getDebut());
+        surv.getFin();
+        //setInterval(()=>clock.updateClock(),1000);
     }
 )();
