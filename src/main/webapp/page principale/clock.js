@@ -1,4 +1,4 @@
-import {examenText} from "./textExamen.js";
+import {examenText} from "./ui/textExamen.js";
 
 export class Clock{
 

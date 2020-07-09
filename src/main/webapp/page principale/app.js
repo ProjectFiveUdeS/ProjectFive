@@ -1,10 +1,3 @@
-import {datatable} from "./datatable.js";
-import {layout} from "./layout.js";
-import {Clock} from "./clock.js"
-//import {toolbarSurveillant} from "./surveillant.js";
-import {Gestion} from "./gestion.js";
-import {examenText} from "./textExamen.js";
-
 webix.attachEvent(
     'onAjaxError',
     async (status) => {

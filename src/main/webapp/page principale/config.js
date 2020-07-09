@@ -1,5 +1,5 @@
-import { datatable } from "./datatable.js";
-import { toolbar } from "./toolbar.js";
+import { datatable } from "./ui/datatable.js";
+import { toolbar } from "./ui/toolbar.js";
 
 export const config = new class Config {
 

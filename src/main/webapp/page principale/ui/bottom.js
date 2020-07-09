@@ -15,7 +15,7 @@ export const bottom = new class Bottom  {
             elements: [{
                 view: "label",
                 width: 30,
-                label: '<img src="images/udes-logo.svg" width="60%">'
+                label: '<img src="../../images/udes-logo.svg" width="60%">'
             },
                 {
                     view: "label",
