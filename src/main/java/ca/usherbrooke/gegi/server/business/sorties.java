@@ -6,6 +6,7 @@ public class sorties {
     private String heureDebut;
     private String heureFin;
     private String cip;
+    private String idCoursExamen;
 
     public String getCip() {
         return cip;
@@ -27,6 +28,8 @@ public class sorties {
         return heureFin;
     }
 
+    public String getIdCoursExamen() { return idCoursExamen; }
+
     public void setCip(String cip) {
         this.cip = cip;
     }
@@ -47,6 +50,8 @@ public class sorties {
         this.typeSortie = type_sortie;
     }
 
+    public void setIdCoursExamen(String id_cours_examen) {this.idCoursExamen = id_cours_examen;}
+
     //si c'est un variable string ou semblable il faut ajouter des guillemets ""
     @Override
     public String toString() {
@@ -55,7 +60,8 @@ public class sorties {
                 ", \"id_sortie\":\"" + idSortie + "\"" +
                 ", \"heure_debut\":\"" + heureDebut + "\"" +
                 ", \"heure_fin\":\"" + heureFin + "\"" +
-                ", \"cip\":\"" + cip + "\"" +
+                ", \"cip\":\"" + cip + "\"" + "\"" +
+                ", \"id_cours_examen\":\"" + idCoursExamen +
                 '}';
     }
 }

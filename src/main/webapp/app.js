@@ -68,5 +68,6 @@ webix.attachEvent(
         }*/
         //await gest.insertExamen(exam);
         setInterval(()=>clock.updateClock(),1000);
+        $$("slider").resize(100);
     }
 )();

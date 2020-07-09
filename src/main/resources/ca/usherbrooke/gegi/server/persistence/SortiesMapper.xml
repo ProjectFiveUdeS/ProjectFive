@@ -9,7 +9,8 @@
        type_sortie,
        heure_debut,
        heure_fin,
-       cip
+       cip,
+       id_cours_examen
       FROM sorties WHERE id_sortie = #{idSortie};
     </select>
 
@@ -19,13 +20,14 @@
        type_sortie,
        heure_debut,
        heure_fin,
-       cip
+       cip,
+       id_cours_examen
       FROM sorties;
     </select>
 
     <insert id="insertSorties">
       insert into sorties
-      values (((SELECT MAX(id_sortie) FROM sorties) + 1), #{sorties.typeSortie}, #{sorties.heureDebut}::timestamp, #{sorties.heureFin}::timestamp, #{sorties.cip});
+      values (((SELECT MAX(id_sortie) FROM sorties) + 1), #{sorties.typeSortie}, #{sorties.heureDebut}::timestamp, #{sorties.heureFin}::timestamp, #{sorties.cip}, #{sorties.idCoursExamen});
     </insert>
 
 </mapper>

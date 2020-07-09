@@ -20,9 +20,6 @@ export const toolbarTemps = new class Temps{
                 labelHeureActuelle.configuration,
                 bulletTempsRestant.configuration,
                 tempsRestantHeure.configuration
-                //buttonSortie.configuration,
-                //cipSortieText.configuration,
-                //typeSortieText.configuration
             ]
         }
     }

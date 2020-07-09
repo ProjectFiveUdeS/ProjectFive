@@ -16,7 +16,8 @@ export const buttonSortie = new class Sortie{
                     typeSortie: $$("textTypeSortie").getValue(),
                     heureDebut: "2020-07-08 08:00:00",
                     heureFin: "2020-07-08 08:15:00",
-                    cip: $$("textCipSortie").getValue()
+                    cip: $$("textCipSortie").getValue(),
+                    idCoursExamen: $$("textExamen").getValue()
                 }
                 buttonSortie.insertSortie(sortie);
             }
