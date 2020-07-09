@@ -1,12 +1,20 @@
+import {examenText} from "./textExamen.js";
+
 export class Clock{
 
-    updateClock(){
+    async updateClock(){
         let currentTime = new Date ();
         let heure = currentTime.getHours();
         let min = currentTime.getMinutes();
         let sec = currentTime.getSeconds();
-        const debutExam = new Date(2020, 6, 18, 11, 0, 20); //Valeur convertie en secondes, on récupérera cette valeur dans la DB.
-        const finExam = new Date(2020, 6, 18, 13, 20, 0); //Idem
+        let exam = await examenText.selectExamen($$("textExamen").getValue());
+        let debut = exam[0].debut;
+        let fin = exam[0].fin;
+        const debutExam = new Date(); //Valeur convertie en secondes, on récupérera cette valeur dans la DB.
+        const finExam = new Date(); //Idem
+        debutExam.setHours(debut.split(':')[0], debut.split(':')[1], debut.split(':')[2]);
+        finExam.setHours(fin.split(':')[0], fin.split(':')[1], fin.split(':')[2]);
+        console.log(debutExam);
         const debutExamEnSec = 3600*debutExam.getHours() + 60*debutExam.getMinutes() + debutExam.getSeconds();
         const finExamEnSec = 3600*finExam.getHours() + 60*finExam.getMinutes() + finExam.getSeconds();
         const currentTimeEnSec = 3600*currentTime.getHours() + 60*currentTime.getMinutes() + currentTime.getSeconds();
@@ -22,8 +30,8 @@ export class Clock{
         $$("heure_actuelle").refresh();
 
         if(currentTime <= finExam)
-            $$("barre_temps_restant").setValue((currentTimeEnSec-debutExamEnSec)*100/(finExamEnSec-debutExamEnSec));
-        $$("barre_temps_restant").refresh();
+            $$("bulletTempsRestant").setValue((currentTimeEnSec-debutExamEnSec)*100/(finExamEnSec-debutExamEnSec));
+        $$("bulletTempsRestant").refresh();
 
         let heure2 = finExam.getHours() - currentTime.getHours();
         let minutes2 = finExam.getMinutes() - currentTime.getMinutes();
@@ -41,8 +49,8 @@ export class Clock{
         let stringHeure2 = heure2 + ":" + minutes2 + ":" + secondes2;
 
         if(currentTimeEnSec <= finExamEnSec)
-            $$("temps_restant").setValue(stringHeure2);
-        $$("temps_restant").refresh();
+            $$("labelTempsRestant").setValue(stringHeure2);
+        $$("labelTempsRestant").refresh();
     }
 
     setLabel(label){

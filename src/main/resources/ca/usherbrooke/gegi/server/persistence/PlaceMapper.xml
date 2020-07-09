@@ -7,7 +7,7 @@
       SELECT
         numero_chaise,
         numero_local
-      FROM place WHERE numero_local = #{numero_local} AND numero_chaise = #{numero_chaise};
+      FROM place WHERE numero_local = #{numeroLocal} AND numero_chaise = #{numeroChaise};
     </select>
 
     <select id="selectAll" resultType="place">
@@ -19,7 +19,7 @@
 
     <insert id="insertPlace">
       insert into place
-      values (#{place.numero_local}, #{place.numero_chaise});
+      values (#{place.numeroLocal}, #{place.numeroChaise});
     </insert>
 
 </mapper>

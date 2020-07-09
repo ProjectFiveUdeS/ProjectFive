@@ -8,7 +8,7 @@
         numero_local,
         nombre_places,
         description_local
-      FROM s3iprojet05.public.local WHERE numero_local = #{numero_local};
+      FROM local WHERE numero_local = #{numeroLocal};
     </select>
 
     <select id="selectAll" resultType="local">
@@ -16,12 +16,12 @@
         numero_local,
         nombre_places,
         description_local
-      FROM s3iprojet05.public.local;
+      FROM local;
     </select>
 
     <insert id="insertLocal">
-      insert into s3iprojet05.public.local
-      values (#{local.numero_local}, #{local.nombre_places}, #{local.description_local});
+      insert into local
+      values (#{local.numeroLocal}, #{local.nombrePlaces}, #{local.descriptionLocal});
     </insert>
 
 </mapper>

@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface PlaceMapper {
 
-    List<place> select(@Param("numero_chaise") int numero_chaise, @Param("numero_local") String numero_local);
+    List<place> select(@Param("numeroChaise") int numeroChaise, @Param("numero_local") String numero_local);
     List<place> selectAll();
     void insertPlace(@Param("place") place place);
 }

@@ -15,10 +15,10 @@
         fin,
         fin_adapte,
         date_examen
-      FROM examen WHERE id_cours_examen = #{id_cours_examen};
+      FROM examen WHERE id_cours_examen = #{idCoursExamen};
     </select>
 
-    <select id="selectAll" resultType="examen">
+    <select id="selectAllExamen" resultType="examen">
       SELECT
         id_cours_examen,
         nbr_etudiants_prevu,
@@ -35,9 +35,9 @@
 
     <insert id="insertExamen">
       insert into examen
-      values (#{examen.id_cours_examen}, #{examen.nbr_etudiants_prevu}, #{examen.nbr_etudiants_presents},
-       #{examen.debut}, #{examen.debut_adapte}, #{examen.tiers_temps}, #{examen.tiers_temps_adapte},
-       #{examen.fin}, #{examen.fin_adapte}, #{examen.date_examen});
+      values (#{examen.idCoursExamen}, #{examen.nbrEtudiantsPrevu}, #{examen.nbrEtudiantsPresents},
+       #{examen.debut}::timestamp, #{examen.debutAdapte}::timestamp, #{examen.tiersTemps}::timestamp, #{examen.tiersTempsAdapte}::timestamp,
+       #{examen.fin}::timestamp, #{examen.finAdapte}::timestamp, #{examen.dateExamen}::timestamp);
     </insert>
 
 </mapper>

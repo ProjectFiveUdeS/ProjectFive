@@ -34,8 +34,8 @@ public class PlaceService {
     @GET
     @Path("place")
     @Produces("application/json")
-    public List<place> getPlace(@QueryParam("numero_chaise") int numero_chaise, @QueryParam("numero_local") String numero_local) {
-        List<place> places = placeMapper.select(numero_chaise, numero_local);
+    public List<place> getPlace(@QueryParam("numeroChaise") int numeroChaise, @QueryParam("numeroLocal") String numeroLocal) {
+        List<place> places = placeMapper.select(numeroChaise, numeroLocal);
         return places;
     }
 

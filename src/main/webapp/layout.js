@@ -1,6 +1,8 @@
-import {toolbar} from "./toolbar.js";
+import {toolbarTemps} from "./toolbar.js";
 import {datatable} from "./datatable.js";
 import {bottom} from "./bottom.js";
+import {toolbarSurveillant} from "./surveillant.js"
+import {examenText} from "./textExamen.js";
 
 export const layout = new class {
 
@@ -19,9 +21,10 @@ export const layout = new class {
             view: 'form',
             id: 'main',
             rows: [
-                toolbar.configuration,
-                datatable.configuration,
-                bottom.configuration,
+                toolbarTemps.configuration,
+                toolbarSurveillant.configuration,
+                examenText.configuration,
+                bottom.configuration
             ],
         }
     }

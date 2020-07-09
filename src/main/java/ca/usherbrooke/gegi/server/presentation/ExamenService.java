@@ -2,6 +2,7 @@ package ca.usherbrooke.gegi.server.presentation;
 
 import ca.usherbrooke.gegi.server.business.examen;
 import ca.usherbrooke.gegi.server.persistence.ExamenMapper;
+import org.apache.ibatis.annotations.Param;
 
 import javax.inject.Inject;
 import javax.json.Json;
@@ -34,9 +35,8 @@ public class ExamenService {
     @GET
     @Path("examen")
     @Produces("application/json")
-    public List<examen> getExamen(@QueryParam("id_cours_examen") String id_cours_examen) {
-
-        List<examen> examens = examenMapper.select(id_cours_examen);
+    public List<examen> getExamen(@QueryParam("idCoursExamen") String idCoursExamen) {
+        List<examen> examens = examenMapper.select(idCoursExamen);
         return examens;
     }
 
@@ -44,7 +44,7 @@ public class ExamenService {
     @Path("examens")
     @Produces("application/json")
     public List<examen> getExamens(){
-        List<examen> examens = examenMapper.selectAll();
+        List<examen> examens = examenMapper.selectAllExamen();
         return examens;
     }
 

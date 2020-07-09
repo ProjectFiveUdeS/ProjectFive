@@ -1,67 +1,67 @@
 package ca.usherbrooke.gegi.server.business;
 
 public class examen {
-    private String id_cours_examen;
-    private int nbr_etudiants_prevu;
-    private int nbr_etudiants_presents;
+    private String idCoursExamen;
+    private int nbrEtudiantsPrevu;
+    private int nbrEtudiantsPresents;
     private String debut;
-    private String debut_adapte;
-    private String tiers_temps;
-    private String tiers_temps_adapte;
+    private String debutAdapte;
+    private String tiersTemps;
+    private String tiersTempsAdapte;
     private String fin;
-    private String fin_adapte;
-    private String date_examen;
+    private String finAdapte;
+    private String dateExamen;
 
-    public String getId_cours_examen(){
-        return id_cours_examen;
+    public String getIdCoursExamen(){
+        return idCoursExamen;
     }
 
-    public int getNbr_etudiants_prevu(){
-        return nbr_etudiants_prevu;
+    public int getNbrEtudiantsPrevu(){
+        return nbrEtudiantsPrevu;
     }
 
-    public int getNbr_etudiants_presents(){
-        return nbr_etudiants_presents;
+    public int getNbrEtudiantsPresents(){
+        return nbrEtudiantsPresents;
     }
 
     public String getDebut(){
         return debut;
     }
 
-    public String getDebut_adapte(){
-        return debut_adapte;
+    public String getDebutAdapte(){
+        return debutAdapte;
     }
 
-    public String getTiers_temps(){
-        return tiers_temps;
+    public String getTiersTemps(){
+        return tiersTemps;
     }
 
-    public String getTiers_temps_adapte(){
-        return tiers_temps_adapte;
+    public String getTiersTempsAdapte(){
+        return tiersTempsAdapte;
     }
 
     public String getFin(){
         return fin;
     }
 
-    public String getFin_adapte(){
-        return fin_adapte;
+    public String getFinAdapte(){
+        return finAdapte;
     }
 
-    public String getDate_examen() {
-        return date_examen;
+    public String getDateExamen() {
+        return dateExamen;
     }
 
     public void setDebut(String debut) {
         this.debut = debut;
     }
 
-    public void setDebut_adapte(String debut_adapte) {
-        this.debut_adapte = debut_adapte;
+    public void setDebutAdapte(String debut_adapte) {
+        this.debutAdapte=debut_adapte;
     }
 
     public void setId_cours_examen(String id_cours_examen) {
-        this.id_cours_examen = id_cours_examen;
+        this.idCoursExamen = id_cours_examen;
     }
 
     public void setFin(String fin) {
@@ -69,40 +69,41 @@ public class examen {
     }
 
     public void setNbr_etudiants_presents(int nbr_etudiants_presents) {
-        this.nbr_etudiants_presents = nbr_etudiants_presents;
+        this.nbrEtudiantsPresents = nbr_etudiants_presents;
     }
 
     public void setNbr_etudiants_prevu(int nbr_etudiants_prevu) {
-        this.nbr_etudiants_prevu = nbr_etudiants_prevu;
+        this.nbrEtudiantsPrevu = nbr_etudiants_prevu;
     }
 
     public void setFin_adapte(String fin_adapte) {
-        this.fin_adapte = fin_adapte;
+        this.finAdapte = fin_adapte;
     }
 
     public void setTiers_temps(String tiers_temps) {
-        this.tiers_temps = tiers_temps;
+        this.tiersTemps = tiers_temps;
     }
 
     public void setTiers_temps_adapte(String tiers_temps_adapte) {
-        this.tiers_temps_adapte = tiers_temps_adapte;
+        this.tiersTempsAdapte = tiers_temps_adapte;
     }
 
     public void setDate_examen(String date_examen) {
-        this.date_examen = date_examen;
+        this.dateExamen = date_examen;
     }
 
     //si c'est un variable string ou semblable il faut ajouter des guillemets ""
     @Override
     public String toString() {
         return "{" +
-                "\"id_examen\":\"" + id_cours_examen + "\"" +
-                ", \"nbr_etudiants_prevu\":\"" + nbr_etudiants_prevu + "\"" +
-                ", \"nbr_etudiants_presents\":\"" + nbr_etudiants_presents + "\"" +
+                "\"id_cours_examen\":\"" + idCoursExamen + "\"" +
+                "test" +
+                ", \"nbr_etudiants_prevu\":\"" + nbrEtudiantsPrevu + "\"" +
+                ", \"nbr_etudiants_presents\":\"" + nbrEtudiantsPresents + "\"" +
                 ", \"debut\":" + debut + "\"" + ", \"debut_adapte\":" +
-                debut_adapte + "\"" + ", \"fin\":\"" + fin + "\"" + ", \"fin_adapte\":"
-                + fin_adapte + "\"" + ", \"tiers_temps\":\"" + tiers_temps + "\"" + ", \"tiers_temps_adapte\":"
-                + tiers_temps_adapte + "\"" + ", \"date_examen\":\"" + date_examen +
+                debutAdapte + "\"" + ", \"fin\":\"" + fin + "\"" + ", \"fin_adapte\":"
+                + finAdapte + "\"" + ", \"tiers_temps\":\"" + tiersTemps + "\"" + ", \"tiers_temps_adapte\":"
+                + tiersTempsAdapte + "\"" + ", \"date_examen\":\"" + dateExamen +
                 '}';
     }
 }

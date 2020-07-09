@@ -34,9 +34,9 @@ public class LocalService {
     @GET
     @Path("local")
     @Produces("application/json")
-    public List<local> getLocal(@QueryParam("numero_local") String numero_local) {
+    public List<local> getLocal(@QueryParam("numeroLocal") String numeroLocal) {
 
-        List<local> locaux = localMapper.select(numero_local);
+        List<local> locaux = localMapper.select(numeroLocal);
         return locaux;
     }
 

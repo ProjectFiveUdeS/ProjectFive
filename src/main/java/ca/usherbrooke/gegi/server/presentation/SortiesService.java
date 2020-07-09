@@ -34,8 +34,8 @@ public class SortiesService {
     @GET
     @Path("sorties")
     @Produces("application/json")
-    public List<sorties> getSorties(@QueryParam("id_sortie") int id_sortie) {
-        List<sorties> sorties = sortiesMapper.select(id_sortie);
+    public List<sorties> getSorties(@QueryParam("idSortie") int idSortie) {
+        List<sorties> sorties = sortiesMapper.select(idSortie);
         return sorties;
     }
 
@@ -73,7 +73,7 @@ public class SortiesService {
         List<sorties> sortiesList = response.readEntity((new GenericType<List<sorties>>(){}));
         for(sorties sor : sortiesList)
         {*/
-            sortiesMapper.insertSorties(sorties);
+        sortiesMapper.insertSorties(sorties);
         //}
     }
 }

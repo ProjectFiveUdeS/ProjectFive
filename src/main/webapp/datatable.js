@@ -14,34 +14,27 @@ export const datatable = new class Datatable {
             data: [],
             columns: [
                 {
-                    id: "id_sortie",
-                    header: "Numéro sortie",
-                    width: 75,
-                    tooltip: "Numéro sortie",
-                    hidden: false,
-                },
-                {
-                    id: "type_sortie",
-                    header: "Type de sortie",
-                    hidden: false,
-                    width: 200,
-                    fillspace: true,
-                },
-                {
-                    id: "heure_debut",
-                    header: "Début sortie",
-                    width: 200,
-                    fillspace: true,
-                },
-                {
-                    id: "heure_fin",
-                    header: "Fin sortie",
-                    width: 200,
-                    fillspace: true,
-                },
-                {
                     id: "cip",
                     header: "CIP",
+                    hidden: false,
+                    width: 200,
+                    fillspace: true,
+                },
+                {
+                    id: "nom",
+                    header: "Nom",
+                    width: 200,
+                    fillspace: true,
+                },
+                {
+                    id: "prenom",
+                    header: "Prénom",
+                    width: 200,
+                    fillspace: true,
+                },
+                {
+                    id: "adapte",
+                    header: "adapte",
                     width: 200,
                     fillspace: true,
                 }
@@ -50,15 +43,16 @@ export const datatable = new class Datatable {
     }
 
     async loadSorties() {
-        $$("main").showProgress({type: 'top'});
+        //$$("main").showProgress({type: 'top'});
+        let cip = {cip:"girm1235"}
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/toutesSorties")
+            .get("api/etudiant", cip)
             .then(data => data.json())
             .then(data => {
                 $$(datatable.id).clearAll();
                 $$(datatable.id).parse(data);
-                $$("main").hideProgress();
+                //$$("main").hideProgress();
 
             })
             .catch((reason) => {

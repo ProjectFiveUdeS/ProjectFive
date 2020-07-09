@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface LocalMapper {
 
-    List<local> select(@Param("numero_local") String numero_local);
+    List<local> select(@Param("numeroLocal") String numeroLocal);
     List<local> selectAll();
     void insertLocal(@Param("local") local local);
 }

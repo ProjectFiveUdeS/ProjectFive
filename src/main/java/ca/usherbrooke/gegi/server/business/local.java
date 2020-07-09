@@ -1,41 +1,41 @@
 package ca.usherbrooke.gegi.server.business;
 
 public class local {
-    private String numero_local;
-    private int nombre_places;
-    private String description_local;
+    private String numeroLocal;
+    private int nombrePlaces;
+    private String descriptionLocal;
 
-    public String getNumero_local() {
-        return numero_local;
+    public String getNumeroLocal() {
+        return numeroLocal;
     }
 
-    public String getDescription_local() {
-        return description_local;
+    public String getDescriptionLocal() {
+        return descriptionLocal;
     }
 
-    public int getNombre_places() {
-        return nombre_places;
+    public int getNombrePlaces() {
+        return nombrePlaces;
     }
 
-    public void setDescription_local(String description_local) {
-        this.description_local = description_local;
+    public void setDescriptionLocal(String description_local) {
+        this.descriptionLocal = description_local;
     }
 
-    public void setNombre_places(int nombre_places) {
-        this.nombre_places = nombre_places;
+    public void setNombrePlaces(int nombre_places) {
+        this.nombrePlaces = nombre_places;
     }
 
-    public void setNumero_local(String numero_local) {
-        this.numero_local = numero_local;
+    public void setNumeroLocal(String numero_local) {
+        this.numeroLocal = numero_local;
     }
 
     //si c'est un variable string ou semblable il faut ajouter des guillemets ""
     @Override
     public String toString() {
         return "{" +
-                "\"numero_local\":\"" + numero_local + "\"" +
-                ", \"nombre_places\":" + nombre_places +
-                ", \"description_local\":\"" + description_local + "\"" +
+                "\"numero_local\":\"" + numeroLocal + "\"" +
+                ", \"nombre_places\":\"" + nombrePlaces + "\"" +
+                ", \"description_local\":\"" + descriptionLocal +
                 '}';
     }
 }

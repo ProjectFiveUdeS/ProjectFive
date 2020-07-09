@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface AssisAMapper {
 
-    List<assis_a> select(@Param("cip") String cip, @Param("id_cours_examen") String id_cours_examen);
+    List<assis_a> select(@Param("cip") String cip, @Param("idCoursExamen") String idCoursExamen);
     List<assis_a> selectAll();
     void insertAssisA(@Param("assisA") assis_a assisA);
 }

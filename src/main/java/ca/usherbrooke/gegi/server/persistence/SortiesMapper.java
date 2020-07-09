@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface SortiesMapper {
 
-    List<sorties> select(@Param("id_sortie") int id_sortie);
+    List<sorties> select(@Param("idSortie") int idSortie);
     List<sorties> selectAll();
     void insertSorties(@Param("sorties") sorties sorties);
 }

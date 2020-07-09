@@ -3,7 +3,7 @@ export class Gestion{
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
             .get("api/examen", id_cours_examen)
-            .then(data => data.json())
+            .then(async data => data.json())
             .catch((reason) => {
                 console.error(reason);
             });
@@ -13,7 +13,7 @@ export class Gestion{
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
             .get("api/assis_a", cip)
-            .then(data => data.json())
+            .then(async data => data.json())
             .catch((reason) => {
                 console.error(reason);
             });
@@ -23,7 +23,7 @@ export class Gestion{
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
             .get("api/etudiant", cip)
-            .then(data => data.json())
+            .then(async data => data.json())
             .catch((reason) => {
                 console.error(reason);
             });
@@ -33,7 +33,7 @@ export class Gestion{
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
             .get("api/local", numero_local)
-            .then(data => data.json())
+            .then(async data => data.json())
             .catch((reason) => {
                 console.error(reason);
             });
@@ -43,7 +43,7 @@ export class Gestion{
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
             .get("api/place", numero_chaise, numero_local)
-            .then(data => data.json())
+            .then(async data => data.json())
             .catch((reason) => {
                 console.error(reason);
             });
@@ -53,7 +53,7 @@ export class Gestion{
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
             .get("api/sorties", id_sortie)
-            .then(data => data.json())
+            .then(async data => data.json())
             .catch((reason) => {
                 console.error(reason);
             });

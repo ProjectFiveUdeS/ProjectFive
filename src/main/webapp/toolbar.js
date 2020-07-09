@@ -1,41 +1,28 @@
-export const toolbar = new class Temps{
+import {labelHeureActuelle} from "./labelHeureActuelle.js"
+import {bulletTempsRestant} from "./barreTempsRestant.js"
+import {tempsRestantHeure} from "./tempsRestantHeure.js"
+import {buttonSortie} from "./insertSortieButton.js"
+import {cipSortieText} from "./cipSortieText.js"
+import {typeSortieText} from "./typeSortieText.js";
+
+export const toolbarTemps = new class Temps{
     getViewID(){
         return "toolbar";
     }
 
     get configuration() {
         return {
-            view: "toolbar",
-            id: this.getViewID(),
+            view: this.getViewID(),
+            id: "toolbarTest",
             paddingY:1,
             hidden:false,
             height:40, elements: [
-                {
-                    view: "label",
-                    label: `<span style="font-size: 150%" >00:00:00</span>`,
-                    id:'heure_actuelle',
-                    hidden:false,
-                    width:100,
-                },
-                {
-                    view:"bullet",
-                    minRange:0,
-                    maxRange:100,
-                    value:0,
-                    flowTime:1000,
-                    bands:[
-                        {value:33, color:"red"},
-                        {value:100, color:"green"},
-                    ],
-                    id:'barre_temps_restant'
-                },
-                {
-                    view: "label",
-                    label: `<span style="font-size: 150%" >09:59:59</span>`,
-                    id:'temps_restant',
-                    hidden:false,
-                    width:100
-                }
+                labelHeureActuelle.configuration,
+                bulletTempsRestant.configuration,
+                tempsRestantHeure.configuration
+                //buttonSortie.configuration,
+                //cipSortieText.configuration,
+                //typeSortieText.configuration
             ]
         }
     }

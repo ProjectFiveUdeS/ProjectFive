@@ -1,48 +1,26 @@
-import {datatable} from "./datatable.js";
+import {buttonSortie} from "./insertSortieButton.js";
+import {cipSortieText} from "./cipSortieText.js";
+import {typeSortieText} from "./typeSortieText.js";
 
-export class surveillant {
+export const toolbarSurveillant = new class surveillant {
     debutExam;
     finExam;
 
-    async insertSortie(sortie) {
-        webix
-            .ajax()
-            .headers({"Content-Type": "application/json"})
-            .put("api/insertSorties", JSON.stringify(sortie))
-            .then(async data => {
-                webix.message({type: "success", text: "Sortie insérée"});
-                webix.ui(datatable.configuration, $$(datatable.id));
-                await datatable.loadSorties();
-            })
-            .catch((reason) => {
-                console.error(reason);
-                webix.modalbox({
-                    title: 'Erreur',
-                    text: "Problème lors de l'insertion d'une sortie",
-                    type: 'alert-error',
-                });
-            });
+    getViewID(){
+        return "toolbar"
     }
 
-    async selectExamen(id_cours_examen){
-        return webix.ajax()
-            .headers({"Content-Type": "application/json"})
-            .get("api/examen", id_cours_examen)
-            .then(data => data.json())
-            .then(data => {
-                this.debutExam = data,
-                this.finExam = $('#fin')
-            })
-            .catch((reason) => {
-                console.error(reason);
-            });
-    }
-
-    getDebut(){
-        return this.debutExam;
-    }
-
-    getFin(){
-        return this.finExam;
+    get configuration() {
+        return {
+            view: "toolbar",
+            id: this.getViewID(),
+            paddingY:1,
+            hidden:false,
+            height:40, elements: [
+                    buttonSortie.configuration,
+                    cipSortieText.configuration,
+                    typeSortieText.configuration,
+            ]
+        }
     }
 }
