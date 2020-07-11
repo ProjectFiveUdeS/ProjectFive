@@ -1,9 +1,6 @@
-import {labelHeureActuelle} from "./labelHeureActuelle.js"
-import {bulletTempsRestant} from "./barreTempsRestant.js"
-import {tempsRestantHeure} from "./tempsRestantHeure.js"
-import {buttonSortie} from "./insertSortieButton.js"
-import {cipSortieText} from "./cipSortieText.js"
-import {typeSortieText} from "./typeSortieText.js";
+import {labelHeureActuelle} from "./labelHeureActuelle.js";
+import {bulletTempsRestant} from "./barreTempsRestant.js";
+import {tempsRestantHeure} from "./tempsRestantHeure.js";
 
 export const toolbarTemps = new class Temps{
     getViewID(){

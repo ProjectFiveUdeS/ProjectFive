@@ -12,7 +12,7 @@
       FROM surveille WHERE id_surveillant = #{idSurveillant} AND date_examen = #{dateExamen}::timestamp;
     </select>
 
-    <select id="selectAll" resultType="surveillant">
+    <select id="selectAll" resultType="surveille">
       SELECT
        id_surveillant,
        id_cours_examen,

@@ -1,7 +1,6 @@
 import {toolbarTemps} from "./toolbar.js";
 import {bottom} from "./bottom.js";
 import {toolbarSurveillant} from "./surveillant.js"
-import {examenText} from "./textExamen.js";
 
 export const layout = new class {
 
@@ -22,7 +21,6 @@ export const layout = new class {
             rows: [
                 toolbarTemps.configuration,
                 toolbarSurveillant.configuration,
-                examenText.configuration,
                 bottom.configuration
             ],
         }

@@ -2,6 +2,9 @@ import {buttonSortie} from "./insertSortieButton.js";
 import {cipSortieText} from "./cipSortieText.js";
 import {typeSortieText} from "./typeSortieText.js";
 import {textSelectionSurveillant} from "./textSelectionSurveillant.js";
+import {labelLocal} from "./labelLocal.js";
+import {labelExamen} from "./labelExamen.js";
+import {buttonSelectSurveillant} from "./buttonSelectSurveillant.js";
 
 export const toolbarSurveillant = new class surveillant {
 
@@ -16,8 +19,9 @@ export const toolbarSurveillant = new class surveillant {
             paddingY:1,
             hidden:false,
             height:40, elements: [
-                    buttonSortie.configuration,
-                    cipSortieText.configuration,
+                    labelLocal.configuration,
+                    labelExamen.configuration,
+                    buttonSelectSurveillant.configuration,
                     textSelectionSurveillant.configuration,
                     typeSortieText.configuration,
             ]
@@ -25,9 +29,13 @@ export const toolbarSurveillant = new class surveillant {
     }
 
     async selectSurveillant(prenom, nom){
+        const envoi = {
+            prenom: prenom,
+            nom: nom
+        }
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/surveillantSelectId", nom, prenom)
+            .get("../api/surveillantSelectId", envoi)
             .then(data => data.json())
             .catch((reason) => {
                 console.error(reason);
@@ -35,9 +43,13 @@ export const toolbarSurveillant = new class surveillant {
     }
 
     async selectSurveille(idSurveillant, dateExamen){
+        const envoi = {
+            idSurveillant: idSurveillant,
+            dateExamen: dateExamen
+        }
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/surveille", idSurveillant, dateExamen)
+            .get("../api/surveille", envoi)
             .then(data => data.json())
             .catch((reason) => {
                 console.error(reason);
@@ -45,13 +57,13 @@ export const toolbarSurveillant = new class surveillant {
     }
 
     async selectExamen(idCoursExamen, dateExamen) {
-        let idCours = {
+        const envoi = {
             idCoursExamen: idCoursExamen,
             dateExamen: dateExamen
         }
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/examen", idCours)
+            .get("../api/examen", envoi)
             .then(data => data.json())
             .catch((reason) => {
                 console.error(reason);

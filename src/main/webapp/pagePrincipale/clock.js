@@ -6,10 +6,16 @@ export class Clock{
         let min = currentTime.getMinutes();
         let sec = currentTime.getSeconds();
         let surveillantId = $$("textSelectionSurveillant").getValue();
-        let ajd = "2020-04-21";
-        let surveille = await this.selectSurveille(surveillantId, ajd);
-        let surveille1 = surveille[0];
-        let exam = await this.selectExamen(surveille1.idCoursExamen, surveille1.dateExamen);
+        let ajd = currentTime.toLocaleDateString();
+        let annee = ajd.split('/')[2];
+        let mois = ajd.split('/')[0];
+        let jour = ajd.split('/')[1];
+        jour = (jour < 10 ? "0" : "") + jour;
+        mois = (mois < 10 ? "0" : "") + mois;
+        let ajd2 = annee + "-" + mois + "-" + jour;
+        let surveille1 = await this.selectSurveille(surveillantId, ajd2);
+        let surveille2 = surveille1[0];
+        let exam = await this.selectExamen(surveille2.idCoursExamen, surveille1.dateExamen);
         let exam1 = exam[0];
         min = (min < 10 ? "0" : "") + min;
         sec = (sec < 10 ? "0" : "") + sec;
@@ -72,7 +78,7 @@ export class Clock{
     async selectSurveillant(prenom, nom){
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/surveillantSelectId", nom, prenom)
+            .get("../api/surveillantSelectId", nom, prenom)
             .then(data => data.json())
             .catch((reason) => {
                 console.error(reason);
@@ -86,7 +92,7 @@ export class Clock{
         }
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/surveille", envoi)
+            .get("../api/surveille", envoi)
             .then(data => data.json())
             .catch((reason) => {
                 console.error(reason);
@@ -100,7 +106,7 @@ export class Clock{
         }
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/examen", idCours)
+            .get("../api/examen", idCours)
             .then(data => data.json())
             .catch((reason) => {
                 console.error(reason);

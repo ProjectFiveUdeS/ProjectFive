@@ -1,4 +1,4 @@
-export const examenText = new class textExamen{
+export const textSelectionSurveillant = new class selectionSurveillant{
 
     getViewID(){
         return "text"
@@ -7,10 +7,9 @@ export const examenText = new class textExamen{
     get configuration(){
         return{
             view:this.getViewID(),
-            id: "textExamen",
+            id: "textSelectionSurveillant",
             value:"",
-            label:"ID de l'examen"
+            label:"Surveillant",
         }
     }
-
 }
