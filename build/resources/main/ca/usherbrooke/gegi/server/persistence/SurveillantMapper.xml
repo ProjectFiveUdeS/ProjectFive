@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ca.usherbrooke.gegi.server.persistence.SurveillantMapper">
+    <select id="select" resultType="surveillant">
+        SELECT
+        nom,
+        prenom,
+        id_cours_examen,
+        numero_local
+        FROM surveillant WHERE no = #{nom};
+    </select>
+
+    <select id="selectAll" resultType="surveillant">
+        SELECT
+        nom,
+        prenom,
+        id_cours_examen,
+        numero_local
+        FROM surveillant;
+    </select>
+
+    <insert id="delete">
+        DELETE FROM surveillant
+        WHERE (nom = #{surveillant.nom} AND prenom = #{surveillant.prenom});
+    </insert>
+
+    <insert id="insert">
+      INSERT INTO surveillant
+      VALUES (#{surveillant.nom}, #{surveillant.prenom},
+      #{surveillant.idCoursExamen}, #{surveillant.numeroLocal});
+    </insert>
+
+</mapper>

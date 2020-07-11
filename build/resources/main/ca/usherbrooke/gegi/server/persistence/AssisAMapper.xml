@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ca.usherbrooke.gegi.server.persistence.AssisAMapper">
+    <select id="select" resultType="assis_a">
+      SELECT
+        cip,
+        presence,
+        numero_chaise,
+        numero_local,
+        id_cours_examen
+      FROM assis_a WHERE cip = #{cip} AND id_cours_examen = #{idCoursExamen};
+    </select>
+
+    <select id="selectAll" resultType="assis_a">
+      SELECT
+        cip,
+        presence,
+        numero_chaise,
+        numero_local,
+        id_cours_examen
+      FROM assis_a;
+    </select>
+
+    <insert id="insertEtudiant">
+      insert into assis_a
+      values (#{assis_a.cip}, #{assis_a.presence}, #{assis_a.numeroChaise}, #{assis_a.numeroLocal},
+      #{assis_a.idCoursExamen});
+    </insert>
+
+</mapper>

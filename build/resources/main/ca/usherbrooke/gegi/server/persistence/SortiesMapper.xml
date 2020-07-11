@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ca.usherbrooke.gegi.server.persistence.SortiesMapper">
+    <select id="select" resultType="sorties">
+      SELECT
+       id_sortie,
+       type_sortie,
+       heure_debut,
+       heure_fin,
+       cip,
+       id_cours_examen
+      FROM sorties WHERE id_sortie = #{idSortie};
+    </select>
+
+    <select id="selectAll" resultType="sorties">
+      SELECT
+       id_sortie,
+       type_sortie,
+       heure_debut,
+       heure_fin,
+       cip
+       id_cours_examen
+      FROM sorties;
+    </select>
+
+    <insert id="insertSorties">
+      insert into sorties
+      values (((SELECT MAX(id_sortie) FROM sorties) + 1), #{sorties.typeSortie}, #{sorties.heureDebut}::timestamp,
+       #{sorties.heureFin}::timestamp, #{sorties.cip}, #{sorties.idCoursExamen});
+    </insert>
+
+</mapper>
