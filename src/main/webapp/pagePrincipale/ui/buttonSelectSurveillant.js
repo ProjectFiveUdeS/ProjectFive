@@ -11,6 +11,8 @@ export const buttonSelectSurveillant = new class SelectSurveillant {
             value: "Sélectionner surveillant",
             css: "webix_primary",
             inputWidth: 150,
+            width:250,
+            heigth:150,
             click: async function (id, event) {
                 console.log("test");
                 let surveillantId = $$("textSelectionSurveillant").getValue();
@@ -23,10 +25,17 @@ export const buttonSelectSurveillant = new class SelectSurveillant {
                 let ajd2 = annee + "-" + mois + "-" + jour;
                 let retour = await buttonSelectSurveillant.selectSurveille(surveillantId, ajd2);
                 let retour2 = retour[0];
-                $$("local_actuel").define("label",retour2.numeroLocal);
+                $$("local_actuel").define("label","Local : " + retour2.numeroLocal);
                 $$("local_actuel").refresh();
-                $$("examen_actuel").define("label",retour2.idCoursExamen);
+                $$("examen_actuel").define("label","Examen : " + retour2.idCoursExamen);
                 $$("examen_actuel").refresh();
+                let examen = await buttonSelectSurveillant.selectExamen(retour2.idCoursExamen, ajd2);
+                let examen2 = examen[0];
+                console.log(examen2.debut);
+                $$("heure_debut").define("label", "Heure début : " + examen2.debut);
+                $$("heure_debut").refresh();
+                $$("heure_fin").define("label", "Heure fin : " + examen2.fin);
+                $$("heure_fin").refresh();
             }
         }
     }
@@ -39,6 +48,20 @@ export const buttonSelectSurveillant = new class SelectSurveillant {
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
             .get("../api/surveille", envoi)
+            .then(data => data.json())
+            .catch((reason) => {
+                console.error(reason);
+            });
+    }
+
+    async selectExamen(idCoursExamen, dateExamen) {
+        const envoi = {
+            idCoursExamen: idCoursExamen,
+            dateExamen: dateExamen
+        }
+        return webix.ajax()
+            .headers({"Content-Type": "application/json"})
+            .get("../api/examen", envoi)
             .then(data => data.json())
             .catch((reason) => {
                 console.error(reason);

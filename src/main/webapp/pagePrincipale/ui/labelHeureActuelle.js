@@ -11,6 +11,8 @@ export const labelHeureActuelle = new class Heure{
             id:"heure_actuelle",
             hidden:false,
             width:100,
+            top: 500,
+            left: 500
         }
     }
 }

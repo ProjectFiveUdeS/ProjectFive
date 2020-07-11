@@ -1,6 +1,5 @@
-import {layout} from "./ui/layout.js"
 import {Clock} from "./clock.js";
-import {Gestion} from "./gestion.js";
+import {layoutPagePrincipale} from "./ui/layoutPagePrincipale.js";
 
 webix.attachEvent(
     'onAjaxError',
@@ -27,7 +26,7 @@ webix.attachEvent(
 
 (async () => {
         webix.i18n.setLocale('fr-FR');   // set notation
-        webix.ui(layout.configuration);  // établi les grandes lignes de l'interface usager
+        webix.ui(layoutPagePrincipale.configuration);  // établi les grandes lignes de l'interface usager
         //webix.extend($$("main"), webix.ProgressBar);  //Met en place une barre d'information pour la sauvegarde
         //const parameters = Object.fromEntries(new URLSearchParams(window.location.search)) // va chercher les parametres du URL
         //await datatable.loadSorties(); //initialize les données à partir de service rest

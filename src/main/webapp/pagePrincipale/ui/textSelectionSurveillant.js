@@ -10,6 +10,7 @@ export const textSelectionSurveillant = new class selectionSurveillant{
             id: "textSelectionSurveillant",
             value:"",
             label:"Surveillant",
+            width: 170
         }
     }
 }

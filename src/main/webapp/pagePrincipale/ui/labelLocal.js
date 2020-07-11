@@ -7,10 +7,10 @@ export const labelLocal = new class localLabel{
     get configuration(){
         return{
             view: this.getViewID(),
-            label: "",
+            label: "Local :",
             id:"local_actuel",
             hidden:false,
-            width:100,
+            width:150,
         }
     }
 }

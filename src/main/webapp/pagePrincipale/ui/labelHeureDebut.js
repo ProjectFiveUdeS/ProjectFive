@@ -1,4 +1,4 @@
-export const labelExamen = new class examenLabel{
+export const labelHeureDebut = new class HeureDebut{
 
     getViewID(){
         return "label"
@@ -7,10 +7,10 @@ export const labelExamen = new class examenLabel{
     get configuration(){
         return{
             view: this.getViewID(),
-            label: "Examen :",
-            id:"examen_actuel",
+            label: "Heure début : ",
+            id:"heure_debut",
             hidden:false,
-            width:150,
+            width:200,
         }
     }
 }

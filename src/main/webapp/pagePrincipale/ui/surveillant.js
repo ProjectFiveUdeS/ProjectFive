@@ -19,11 +19,11 @@ export const toolbarSurveillant = new class surveillant {
             paddingY:1,
             hidden:false,
             height:40, elements: [
-                    labelLocal.configuration,
+                    /*labelLocal.configuration,
                     labelExamen.configuration,
                     buttonSelectSurveillant.configuration,
                     textSelectionSurveillant.configuration,
-                    typeSortieText.configuration,
+                    typeSortieText.configuration,*/
             ]
         }
     }
