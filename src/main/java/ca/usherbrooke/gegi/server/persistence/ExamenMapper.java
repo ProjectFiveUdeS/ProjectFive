@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface ExamenMapper {
 
-    List<examen> select(@Param("idCoursExamen") String idCoursExamen);
+    List<examen> select(@Param("idCoursExamen") String idCoursExamen, @Param("dateExamen") String dateExamen);
     List<examen> selectAllExamen();
     void insertExamen(@Param("examen") examen examen);
 }

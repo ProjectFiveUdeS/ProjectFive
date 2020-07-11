@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ca.usherbrooke.gegi.server.persistence.SurveilleMapper">
+    <select id="select" resultType="surveille">
+      SELECT
+       id_surveillant,
+       id_cours_examen,
+       numero_local,
+       date_examen
+      FROM surveille WHERE id_surveillant = #{idSurveillant} AND date_examen = #{dateExamen}::timestamp;
+    </select>
+
+    <select id="selectAll" resultType="surveillant">
+      SELECT
+       id_surveillant,
+       id_cours_examen,
+       numero_local,
+       date_examen
+      FROM surveille;
+    </select>
+
+    <insert id="insertSurveille">
+      insert into surveille
+      values (#(surveille.idSurveillant), #(surveille.idCoursExamen), #(surveille.numeroLocal), #(surveille.dateExamen)::timestamp)
+    </insert>
+
+</mapper>

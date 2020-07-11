@@ -1,5 +1,4 @@
 import {toolbarTemps} from "./toolbar.js";
-import {datatable} from "./datatable.js";
 import {bottom} from "./bottom.js";
 import {toolbarSurveillant} from "./surveillant.js"
 import {examenText} from "./textExamen.js";

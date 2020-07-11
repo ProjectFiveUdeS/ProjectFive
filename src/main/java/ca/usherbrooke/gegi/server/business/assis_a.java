@@ -5,6 +5,7 @@ public class assis_a {
     private boolean presence;
     private String numeroLocal;
     private String idCoursExamen;
+    private String dateExamen;
 
     public boolean isPresence() {
         return presence;
@@ -38,6 +39,10 @@ public class assis_a {
         numeroLocal = s;
     }
 
+    public String getDateExamen(){ return dateExamen; }
+
+    public void setDateExamen(String dateExamen) {this.dateExamen = dateExamen;}
+
     //si c'est un variable string ou semblable il faut ajouter des guillemets ""
     @Override
     public String toString() {
@@ -45,7 +50,8 @@ public class assis_a {
                 "\"cip\":\"" + cip + "\"" +
                 ", \"presence\":\"" + presence + "\"" +
                 ", \"numero_local\":\"" + numeroLocal + "\"" +
-                ", \"id_cours_examen\":" + idCoursExamen +
+                ", \"id_cours_examen\":" + idCoursExamen + "\"" +
+                ", \"date_examen\":" + dateExamen +
                 '}';
     }
 }

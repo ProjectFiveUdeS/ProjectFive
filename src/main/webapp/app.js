@@ -1,3 +1,7 @@
+import {layout} from "./ui/layout.js"
+import {Clock} from "./clock.js";
+import {Gestion} from "./gestion.js";
+
 webix.attachEvent(
     'onAjaxError',
     async (status) => {
@@ -28,7 +32,7 @@ webix.attachEvent(
         //const parameters = Object.fromEntries(new URLSearchParams(window.location.search)) // va chercher les parametres du URL
         //await datatable.loadSorties(); //initialize les données à partir de service rest
         //let surv = new surveillant();
-        let gest = new Gestion();
+        //let gest = new Gestion();
         let clock = new Clock();
         /*const sortie = {
             type_sortie: 0,
@@ -61,6 +65,6 @@ webix.attachEvent(
         }*/
         //await gest.insertExamen(exam);
         setInterval(()=>clock.updateClock(),1000);
-        $$("slider").resize(100);
+
     }
 )();

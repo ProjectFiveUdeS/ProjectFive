@@ -19,6 +19,7 @@ export const buttonSortie = new class Sortie{
                     cip: $$("textCipSortie").getValue(),
                     idCoursExamen: $$("textExamen").getValue()
                 }
+                console.log(new Date().getTime());
                 buttonSortie.insertSortie(sortie);
             }
         }

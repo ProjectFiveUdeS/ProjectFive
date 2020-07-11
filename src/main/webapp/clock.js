@@ -1,5 +1,3 @@
-import {examenText} from "./ui/textExamen.js";
-
 export class Clock{
 
     async updateClock(){
@@ -7,8 +5,12 @@ export class Clock{
         let heure = currentTime.getHours();
         let min = currentTime.getMinutes();
         let sec = currentTime.getSeconds();
-        let exam = await examenText.selectExamen($$("textExamen").getValue());
-
+        let surveillantId = $$("textSelectionSurveillant").getValue();
+        let ajd = "2020-04-21";
+        let surveille = await this.selectSurveille(surveillantId, ajd);
+        let surveille1 = surveille[0];
+        let exam = await this.selectExamen(surveille1.idCoursExamen, surveille1.dateExamen);
+        let exam1 = exam[0];
         min = (min < 10 ? "0" : "") + min;
         sec = (sec < 10 ? "0" : "") + sec;
         let AMPM = (heure < 12) ? "AM" : "PM";
@@ -18,8 +20,8 @@ export class Clock{
         $$("heure_actuelle").setValue(stringHeure);
         $$("heure_actuelle").refresh();
 
-        let debut = exam[0].debut;
-        let fin = exam[0].fin;
+        let debut = exam1.debut;
+        let fin = exam1.fin;
         const debutExam = new Date(); //Valeur convertie en secondes, on récupérera cette valeur dans la DB.
         const finExam = new Date(); //Idem
         debutExam.setHours(debut.split(':')[0], debut.split(':')[1], debut.split(':')[2]);
@@ -65,5 +67,43 @@ export class Clock{
     setLabel(label){
         $$("heure_actuelle").setValue(label);
         $$("heure_actuelle").refresh();
+    }
+
+    async selectSurveillant(prenom, nom){
+        return webix.ajax()
+            .headers({"Content-Type": "application/json"})
+            .get("api/surveillantSelectId", nom, prenom)
+            .then(data => data.json())
+            .catch((reason) => {
+                console.error(reason);
+            });
+    }
+
+    async selectSurveille(idSurveillant, dateExamen){
+        const envoi = {
+            idSurveillant: idSurveillant,
+            dateExamen: dateExamen
+        }
+        return webix.ajax()
+            .headers({"Content-Type": "application/json"})
+            .get("api/surveille", envoi)
+            .then(data => data.json())
+            .catch((reason) => {
+                console.error(reason);
+            });
+    }
+
+    async selectExamen(idCoursExamen, dateExamen) {
+        let idCours = {
+            idCoursExamen: idCoursExamen,
+            dateExamen: dateExamen
+        }
+        return webix.ajax()
+            .headers({"Content-Type": "application/json"})
+            .get("api/examen", idCours)
+            .then(data => data.json())
+            .catch((reason) => {
+                console.error(reason);
+            });
     }
 }

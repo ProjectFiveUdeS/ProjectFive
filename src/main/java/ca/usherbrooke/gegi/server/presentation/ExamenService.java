@@ -35,8 +35,8 @@ public class ExamenService {
     @GET
     @Path("examen")
     @Produces("application/json")
-    public List<examen> getExamen(@QueryParam("idCoursExamen") String idCoursExamen) {
-        List<examen> examens = examenMapper.select(idCoursExamen);
+    public List<examen> getExamen(@QueryParam("idCoursExamen") String idCoursExamen, @QueryParam("dateExamen") String dateExamen) {
+        List<examen> examens = examenMapper.select(idCoursExamen, dateExamen);
         return examens;
     }
 

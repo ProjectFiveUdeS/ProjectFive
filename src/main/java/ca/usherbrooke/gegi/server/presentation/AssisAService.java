@@ -34,9 +34,9 @@ public class AssisAService {
     @GET
     @Path("assis_a")
     @Produces("application/json")
-    public List<assis_a> getAssisA(@QueryParam("cip") String cip, @QueryParam("idCoursExamen") String idCoursExamen) {
+    public List<assis_a> getAssisA(@QueryParam("cip") String cip, @QueryParam("idCoursExamen") String idCoursExamen, @QueryParam("dateExamen") String dateExamen) {
 
-        List<assis_a> assisA = assisAMapper.select(cip, idCoursExamen);
+        List<assis_a> assisA = assisAMapper.select(cip, idCoursExamen, dateExamen);
         return assisA;
     }
 

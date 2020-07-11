@@ -97,7 +97,6 @@ public class examen {
     public String toString() {
         return "{" +
                 "\"id_cours_examen\":\"" + idCoursExamen + "\"" +
-                "test" +
                 ", \"nbr_etudiants_prevu\":\"" + nbrEtudiantsPrevu + "\"" +
                 ", \"nbr_etudiants_presents\":\"" + nbrEtudiantsPresents + "\"" +
                 ", \"debut\":" + debut + "\"" + ", \"debut_adapte\":" +
