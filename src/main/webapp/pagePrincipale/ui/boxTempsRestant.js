@@ -12,15 +12,11 @@ export const boxTempsRestant = new class boxRestant{
         return {
             view: 'form',
                 id: 'boxRestant',
+                borderless: true,
                 rows: [
-                    labelHeureActuelle.configuration,
                     bulletTempsRestant.configuration,
                     tempsRestantHeure.configuration
-            ],
-            alignment:"right",
-            width:500,
-            height:250,
-            borderless: true
+            ]
         }
     }
 }

@@ -7,10 +7,12 @@ export const tempsRestantHeure = new class HeureRestante{
     get configuration(){
         return{
             view: this.getViewID(),
-            label: `<span style="font-size: 150%" >09:59:59</span>`,
+            label: "Temps restant : N/A",
             id:"labelTempsRestant",
             hidden:false,
-            width:100
+            align: "center",
+            height: 100,
+            width: 1000
         }
     }
 }

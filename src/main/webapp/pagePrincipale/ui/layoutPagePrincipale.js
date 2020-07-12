@@ -18,9 +18,12 @@ export const layoutPagePrincipale = new class {
         return {
             view: 'form',
             id: 'main',
+            css: "my_style",
             rows: [
                 layoutEtage1.configuration,
+                {},
                 layoutEtage2.configuration,
+                {},
                 bottom.configuration,
             ],
         }

@@ -6,11 +6,11 @@ export const textSelectionSurveillant = new class selectionSurveillant{
 
     get configuration(){
         return{
+            css: "my_style",
             view:this.getViewID(),
             id: "textSelectionSurveillant",
             value:"",
-            label:"Surveillant",
-            width: 170
+            width: 100
         }
     }
 }

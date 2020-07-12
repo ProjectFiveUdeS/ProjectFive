@@ -22,7 +22,7 @@ public class SurveilleService {
     @GET
     @Path("surveille")
     @Produces("application/json")
-    public List<surveille> getSurveille(@QueryParam("idSurveillant") int idSurveillant, @QueryParam("dateExamen") String dateExamen) {
+    public List<surveille> getSurveille(@QueryParam("idSurveillant") String idSurveillant, @QueryParam("dateExamen") String dateExamen) {
         List<surveille> surveille = surveilleMapper.select(idSurveillant, dateExamen);
         return surveille;
     }

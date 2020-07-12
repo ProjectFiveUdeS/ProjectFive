@@ -2,6 +2,9 @@ import {labelExamen} from "./labelExamen.js";
 import {labelLocal} from "./labelLocal.js";
 import {buttonSelectSurveillant} from "./buttonSelectSurveillant.js";
 import {textSelectionSurveillant} from "./textSelectionSurveillant.js";
+import {labelHeureDebut} from "./labelHeureDebut.js";
+import {labelHeureFin} from "./labelHeureFin.js";
+import {labelHeureActuelle} from "./labelHeureActuelle.js";
 
 export const layoutEtage1 = new class Temps{
     getViewID(){
@@ -11,15 +14,18 @@ export const layoutEtage1 = new class Temps{
     get configuration() {
         return {
             view: this.getViewID(),
+            css: "custom_style",
             id: "layoutInformations",
             paddingY:1,
             hidden:false,
-            height:50, cols: [
+            height: 70,
+            cols: [
                 labelExamen.configuration,
                 labelLocal.configuration,
-                {},
-                buttonSelectSurveillant.configuration,
-                textSelectionSurveillant.configuration
+                labelHeureDebut.configuration,
+                labelHeureFin.configuration,
+                textSelectionSurveillant.configuration,
+                buttonSelectSurveillant.configuration
             ],
         }
     }

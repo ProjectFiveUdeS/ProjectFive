@@ -12,7 +12,10 @@ export const bulletTempsRestant = new class bulletTemps{
             min:0,
             max: 100,
             name:"s1",
-            disabled: true
+            disabled: true,
+            height: 20,
+            width: 1000,
+            align: "center"
         }
 
 

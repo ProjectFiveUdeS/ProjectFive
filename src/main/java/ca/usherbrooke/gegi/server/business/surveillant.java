@@ -3,7 +3,7 @@ package ca.usherbrooke.gegi.server.business;
 public class surveillant {
     private String nom;
     private String prenom;
-    private int idSurveillant;
+    private String idSurveillant;
 
     public String getNom(){
         return nom;
@@ -13,7 +13,7 @@ public class surveillant {
         return prenom;
     }
 
-    public int getIdSurveillant(){
+    public String getIdSurveillant(){
         return idSurveillant;
     }
 

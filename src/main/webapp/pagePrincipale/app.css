@@ -115,6 +115,18 @@
     white-space: nowrap;
 }
 
+.current-user {
+    font-weight: bold;
+}
+
+.label--clickable > div {
+    cursor: hand;
+}
+
+.webix_drag_zone  {
+    background-color: transparent;
+}
+
 @keyframes blinker {
     50% {
         opacity: 0;
@@ -129,7 +141,6 @@
 }
 
 .my_style .webix_column {
-    font-style: italic;
     background: #ddFFdd;
 }
 
@@ -137,14 +148,23 @@
     border-color: #ddd;
 }
 
-.current-user {
-    font-weight: bold;
+.my_style .webix_el_label > div {
+    font-size: 30px;
+    font-family: cursive;
 }
 
-.label--clickable > div {
-    cursor: hand;
+.custom_style .webix_el_box  {
+    border-style: outset;
+    padding: 5px;
 }
 
-.webix_drag_zone  {
-    background-color: transparent;
+.huge_style .webix_el_label > div {
+    font-size: 60px;
+    font-family: cursive;
 }
+
+/*.my_style .webix_view {
+    background-color: #fff6d1;
+}*/
+
+

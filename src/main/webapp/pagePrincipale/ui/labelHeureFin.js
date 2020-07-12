@@ -7,10 +7,10 @@ export const labelHeureFin = new class HeureFin{
     get configuration(){
         return{
             view: this.getViewID(),
-            label: "Heure fin : ",
+            label: "Heure fin : N/A",
             id:"heure_fin",
             hidden:false,
-            width:200,
+            width: 400
         }
     }
 }

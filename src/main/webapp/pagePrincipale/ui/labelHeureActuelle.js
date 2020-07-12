@@ -7,12 +7,12 @@ export const labelHeureActuelle = new class Heure{
     get configuration(){
         return{
             view: this.getViewID(),
-            label: `<span style="font-size: 150%" >00:00:00</span>`,
+            label: "Heure actuelle : N/A",
             id:"heure_actuelle",
             hidden:false,
-            width:100,
-            top: 500,
-            left: 500
+            align: "center",
+            height: 200,
+            width: 1000
         }
     }
 }

@@ -5,7 +5,6 @@ public class examen {
     private int nbrEtudiantsPrevu;
     private int nbrEtudiantsPresents;
     private String debut;
-    private String debutAdapte;
     private String tiersTemps;
     private String tiersTempsAdapte;
     private String fin;
@@ -26,10 +25,6 @@ public class examen {
 
     public String getDebut(){
         return debut;
-    }
-
-    public String getDebutAdapte(){
-        return debutAdapte;
     }
 
     public String getTiersTemps(){
@@ -54,10 +49,6 @@ public class examen {
 
     public void setDebut(String debut) {
         this.debut = debut;
-    }
-
-    public void setDebutAdapte(String debut_adapte) {
-        this.debutAdapte=debut_adapte;
     }
 
     public void setId_cours_examen(String id_cours_examen) {
@@ -99,8 +90,7 @@ public class examen {
                 "\"id_cours_examen\":\"" + idCoursExamen + "\"" +
                 ", \"nbr_etudiants_prevu\":\"" + nbrEtudiantsPrevu + "\"" +
                 ", \"nbr_etudiants_presents\":\"" + nbrEtudiantsPresents + "\"" +
-                ", \"debut\":" + debut + "\"" + ", \"debut_adapte\":" +
-                debutAdapte + "\"" + ", \"fin\":\"" + fin + "\"" + ", \"fin_adapte\":"
+                ", \"debut\":" + debut + "\"" + ", \"fin\":\"" + fin + "\"" + ", \"fin_adapte\":"
                 + finAdapte + "\"" + ", \"tiers_temps\":\"" + tiersTemps + "\"" + ", \"tiers_temps_adapte\":"
                 + tiersTempsAdapte + "\"" + ", \"date_examen\":\"" + dateExamen +
                 '}';

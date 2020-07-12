@@ -22,7 +22,7 @@ export class Clock{
         let AMPM = (heure < 12) ? "AM" : "PM";
         heure = (heure > 12) ? heure - 12 : heure;
         heure = (heure == 0) ? 12 : heure;
-        let stringHeure = heure + ":" + min + ":" + sec + " " + AMPM;
+        let stringHeure = "Heure actuelle : " + heure + ":" + min + ":" + sec + " " + AMPM;
         $$("heure_actuelle").setValue(stringHeure);
         $$("heure_actuelle").refresh();
 
@@ -60,10 +60,12 @@ export class Clock{
         minutes2 = (minutes2 < 10 ? "0" : "") + minutes2;
         secondes2 = (secondes2 < 10 ? "0" : "") + secondes2;
 
-        let stringHeure2 = heure2 + ":" + minutes2 + ":" + secondes2;
+        let stringHeure2 = "Temps restant : " + heure2 + ":" + minutes2 + ":" + secondes2;
 
         if(currentTimeEnSec <= finExamEnSec)
             $$("labelTempsRestant").setValue(stringHeure2);
+        else
+            $$("labelTempsRestant").setValue("Temps restant : N/A");
         $$("labelTempsRestant").refresh();
 
         if(currentTimeEnSec <= debutExamEnSec)

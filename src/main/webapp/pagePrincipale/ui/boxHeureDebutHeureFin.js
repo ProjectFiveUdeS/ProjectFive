@@ -13,7 +13,6 @@ export const boxHeureDebutHeureFin = new class boxTemps{
             id: 'boxHeureDebutHeureFin',
             rows: [
                 {},
-                labelHeureDebut.configuration,
                 labelHeureFin.configuration,
                 {}
             ],

@@ -7,10 +7,9 @@ export const labelExamen = new class examenLabel{
     get configuration(){
         return{
             view: this.getViewID(),
-            label: "Examen :",
+            label: "Examen : N/A",
             id:"examen_actuel",
-            hidden:false,
-            width:150,
+            hidden:false
         }
     }
 }

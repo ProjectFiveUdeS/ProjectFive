@@ -10,11 +10,7 @@ export const buttonSelectSurveillant = new class SelectSurveillant {
             id: "buttonSelectSuurv",
             value: "Sélectionner surveillant",
             css: "webix_primary",
-            inputWidth: 150,
-            width:250,
-            heigth:150,
             click: async function (id, event) {
-                console.log("test");
                 let surveillantId = $$("textSelectionSurveillant").getValue();
                 let ajd = new Date().toLocaleDateString();
                 let annee = ajd.split('/')[2];

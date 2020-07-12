@@ -9,7 +9,6 @@
         nbr_etudiants_prevu,
         nbr_etudiants_presents,
         debut,
-        debut_adapte,
         tiers_temps,
         tiers_temps_adapte,
         fin,
@@ -24,7 +23,6 @@
         nbr_etudiants_prevu,
         nbr_etudiants_presents,
         debut,
-        debut_adapte,
         tiers_temps,
         tiers_temps_adapte,
         fin,
@@ -36,7 +34,7 @@
     <insert id="insertExamen">
       insert into examen
       values (#{examen.idCoursExamen}, #{examen.nbrEtudiantsPrevu}, #{examen.nbrEtudiantsPresents},
-       #{examen.debut}::timestamp, #{examen.debutAdapte}::timestamp, #{examen.tiersTemps}::timestamp, #{examen.tiersTempsAdapte}::timestamp,
+       #{examen.debut}::timestamp, #{examen.tiersTemps}::timestamp, #{examen.tiersTempsAdapte}::timestamp,
        #{examen.fin}::timestamp, #{examen.finAdapte}::timestamp, #{examen.dateExamen}::timestamp);
     </insert>
 

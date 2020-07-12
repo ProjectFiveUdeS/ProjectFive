@@ -1,12 +1,12 @@
 package ca.usherbrooke.gegi.server.business;
 
 public class surveille {
-    private int idSurveillant;
+    private String idSurveillant;
     private String idCoursExamen;
     private String numeroLocal;
     private String dateExamen;
 
-    public int getIdSurveillant(){
+    public String getIdSurveillant(){
         return idSurveillant;
     }
 

@@ -7,10 +7,10 @@ export const labelHeureDebut = new class HeureDebut{
     get configuration(){
         return{
             view: this.getViewID(),
-            label: "Heure début : ",
+            label: "Heure début : N/A",
             id:"heure_debut",
             hidden:false,
-            width:200,
+            width: 400
         }
     }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface SurveillantMapper {
 
-    List<surveillant> select(@Param("idSurveillant") int idSurveillant);
+    List<surveillant> select(@Param("idSurveillant") String idSurveillant);
     List<surveillant> selectAll();
     List<surveillant> selectId(@Param("nom") String nom, @Param("prenom") String prenom);
     void insertSurveillant(@Param("surveillant") surveillant surveillant);
