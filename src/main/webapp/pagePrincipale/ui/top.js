@@ -12,8 +12,8 @@ export const top = new class Top  {
             hidden: false,
             elements: [{
                 view: "label",
-                height: 123,
-                label: '<img src="../images/gestion%20examen.PNG" width="100%">'
+                height: 150,
+                label: '<img src="../images/bandeau.png" width="100%">'
             }
             ]
         }

@@ -26,6 +26,8 @@ export const layoutPagePrincipale = new class {
                 layoutEtage2.configuration,
                 bottom.configuration,
             ],
+            paddingX: -5,
+            paddingY: -5
         }
     }
 };

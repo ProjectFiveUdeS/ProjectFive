@@ -13,7 +13,6 @@ export const layoutEtage2 = new class Temps{
             view: this.getViewID(),
             id: "layoutTemps",
             css: "huge_style",
-            paddingY:1,
             hidden:false,
             cols: [
                 {},

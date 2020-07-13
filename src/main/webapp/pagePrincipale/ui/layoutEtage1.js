@@ -16,7 +16,6 @@ export const layoutEtage1 = new class Temps{
             view: this.getViewID(),
             css: "custom_style",
             id: "layoutInformations",
-            paddingY:1,
             hidden:false,
             height: 70,
             cols: [
