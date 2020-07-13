@@ -9,8 +9,9 @@
         presence,
         numero_chaise,
         numero_local,
-        id_cours_examen
-      FROM assis_a WHERE cip = #{cip} AND id_cours_examen = #{idCoursExamen};
+        id_cours_examen,
+        date_examen
+      FROM assis_a WHERE cip = #{cip} AND id_cours_examen = #{idCoursExamen} AND date_examen = #{dateExamen};
     </select>
 
     <select id="selectAll" resultType="assis_a">
@@ -19,14 +20,15 @@
         presence,
         numero_chaise,
         numero_local,
-        id_cours_examen
+        id_cours_examen,
+        date_examen
       FROM assis_a;
     </select>
 
     <insert id="insertEtudiant">
       insert into assis_a
       values (#{assis_a.cip}, #{assis_a.presence}, #{assis_a.numeroChaise}, #{assis_a.numeroLocal},
-      #{assis_a.idCoursExamen});
+      #{assis_a.idCoursExamen}, #{assis_a.dateExamen});
     </insert>
 
 </mapper>
