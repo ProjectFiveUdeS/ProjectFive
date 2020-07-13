@@ -8,7 +8,8 @@
        id_surveillant,
        id_cours_examen,
        numero_local,
-       date_examen
+       date_examen,
+       adapte
       FROM surveille WHERE id_surveillant = #{idSurveillant} AND date_examen = #{dateExamen}::timestamp;
     </select>
 
@@ -17,13 +18,14 @@
        id_surveillant,
        id_cours_examen,
        numero_local,
-       date_examen
+       date_examen,
+       adapte
       FROM surveille;
     </select>
 
     <insert id="insertSurveille">
       insert into surveille
-      values (#(surveille.idSurveillant), #(surveille.idCoursExamen), #(surveille.numeroLocal), #(surveille.dateExamen)::timestamp)
+      values (#(surveille.idSurveillant), #(surveille.idCoursExamen), #(surveille.numeroLocal), #(surveille.dateExamen)::timestamp, #(surveille.adapte))
     </insert>
 
 </mapper>

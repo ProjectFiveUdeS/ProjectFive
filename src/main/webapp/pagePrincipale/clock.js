@@ -5,29 +5,17 @@ export class Clock{
         let heure = currentTime.getHours();
         let min = currentTime.getMinutes();
         let sec = currentTime.getSeconds();
-        let surveillantId = $$("textSelectionSurveillant").getValue();
-        let ajd = currentTime.toLocaleDateString();
-        let annee = ajd.split('/')[2];
-        let mois = ajd.split('/')[0];
-        let jour = ajd.split('/')[1];
-        jour = (jour < 10 ? "0" : "") + jour;
-        mois = (mois < 10 ? "0" : "") + mois;
-        let ajd2 = annee + "-" + mois + "-" + jour;
-        let surveille1 = await this.selectSurveille(surveillantId, ajd2);
-        let surveille2 = surveille1[0];
-        let exam = await this.selectExamen(surveille2.idCoursExamen, surveille1.dateExamen);
-        let exam1 = exam[0];
         min = (min < 10 ? "0" : "") + min;
         sec = (sec < 10 ? "0" : "") + sec;
-        let AMPM = (heure < 12) ? "AM" : "PM";
-        heure = (heure > 12) ? heure - 12 : heure;
-        heure = (heure == 0) ? 12 : heure;
-        let stringHeure = "Heure actuelle : " + heure + ":" + min + ":" + sec + " " + AMPM;
+        heure = (heure < 10 ? "0" : "") + heure;
+        let stringHeure = "Heure actuelle : " + heure + ":" + min + ":" + sec;
         $$("heure_actuelle").setValue(stringHeure);
         $$("heure_actuelle").refresh();
 
-        let debut = exam1.debut;
-        let fin = exam1.fin;
+        let debut1 = $$("heure_debut").config.label;
+        let debut = debut1.split(' ')[3];
+        let fin1 = $$("heure_fin").config.label;
+        let fin = fin1.split(' ')[3];
         const debutExam = new Date(); //Valeur convertie en secondes, on récupérera cette valeur dans la DB.
         const finExam = new Date(); //Idem
         debutExam.setHours(debut.split(':')[0], debut.split(':')[1], debut.split(':')[2]);

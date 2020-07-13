@@ -5,6 +5,7 @@ public class surveille {
     private String idCoursExamen;
     private String numeroLocal;
     private String dateExamen;
+    private boolean adapte;
 
     public String getIdSurveillant(){
         return idSurveillant;
@@ -22,6 +23,8 @@ public class surveille {
         return dateExamen;
     }
 
+    public boolean isAdapte() {return adapte;}
+
     //si c'est un variable string ou semblable il faut ajouter des guillemets ""
     @Override
     public String toString() {
@@ -29,7 +32,8 @@ public class surveille {
                 "\"id_surveillant\":\"" + idSurveillant + "\"" +
                 ", \"id_cours_examen\":\"" + idCoursExamen + "\"" +
                 ", \"numero_local\":\"" + numeroLocal + "\"" +
-                ", \"date_examen\":\"" + dateExamen +
+                ", \"date_examen\":\"" + dateExamen + "\"" +
+                ", \"adapte\":\"" + adapte +
                 '}';
     }
 }

@@ -27,11 +27,17 @@ export const buttonSelectSurveillant = new class SelectSurveillant {
                 $$("examen_actuel").refresh();
                 let examen = await buttonSelectSurveillant.selectExamen(retour2.idCoursExamen, ajd2);
                 let examen2 = examen[0];
-                console.log(examen2.debut);
                 $$("heure_debut").define("label", "Heure début : " + examen2.debut);
                 $$("heure_debut").refresh();
-                $$("heure_fin").define("label", "Heure fin : " + examen2.fin);
-                $$("heure_fin").refresh();
+                console.log(retour2.adapte);
+                if(!retour2.adapte){
+                    $$("heure_fin").define("label", "Heure fin : " + examen2.fin);
+                    $$("heure_fin").refresh();
+                }
+                else{
+                    $$("heure_fin").define("label", "Heure fin : " + examen2.finAdapte);
+                    $$("heure_fin").refresh();
+                }
             }
         }
     }
