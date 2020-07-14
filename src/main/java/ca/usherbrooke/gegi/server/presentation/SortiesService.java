@@ -27,6 +27,14 @@ public class SortiesService {
     }
 
     @GET
+    @Path("selectToilette")
+    @Produces("application/json")
+    public List<sorties> getSortieToilette(@QueryParam("idCoursExamen") String idCoursExamen, @QueryParam("dateExamen") String dateExamen) {
+        List<sorties> sorties = sortiesMapper.selectToilette(idCoursExamen, dateExamen);
+        return sorties;
+    }
+
+    @GET
     @Path("toutesSorties")
     @Produces("application/json")
     public List<sorties> getToutesSorties(){

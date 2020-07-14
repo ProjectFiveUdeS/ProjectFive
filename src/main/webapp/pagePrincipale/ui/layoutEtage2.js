@@ -1,5 +1,7 @@
 import {boxTempsRestant} from "./boxTempsRestant.js";
 import {labelHeureActuelle} from "./labelHeureActuelle.js";
+import {boxToilette} from "./boxToilette.js";
+import {boxSortieFin} from "./boxSortieFin.js";
 
 export const layoutEtage2 = new class Temps{
     getViewID(){
@@ -12,15 +14,20 @@ export const layoutEtage2 = new class Temps{
             id: "layoutTemps",
             css: "huge_style",
             hidden:false,
+            height: 500,
             cols: [
-                {},
                 {
                     rows: [
                         labelHeureActuelle.configuration,
                         boxTempsRestant.configuration
                     ],
                 },
-                {}
+                {
+                    rows: [
+                        boxToilette.configuration,
+                        boxSortieFin.configuration
+                    ],
+                }
             ]
         }
     }

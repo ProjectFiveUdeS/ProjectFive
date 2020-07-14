@@ -23,6 +23,7 @@ export const layoutPagePrincipale = new class {
             rows: [
                 top.configuration,
                 layoutEtage1.configuration,
+                {},
                 layoutEtage2.configuration,
                 bottom.configuration,
             ],
