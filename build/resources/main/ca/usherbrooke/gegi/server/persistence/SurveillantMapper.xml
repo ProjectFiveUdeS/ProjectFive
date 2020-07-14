@@ -28,7 +28,12 @@
 
     <insert id="insertSurveillant">
       insert into surveillant
-      values (#(surveillant.nom), #(surveillant.prenom), #(surveillant.idSurveillant))
+      values (#{surveillant.nom}, #{surveillant.prenom}, #{surveillant.idSurveillant})
     </insert>
+
+    <delete id="delete">
+        DELETE FROM surveille WHERE id_surveillant = #{surveillant.idSurveillant};
+        DELETE FROM surveillant WHERE id_surveillant = #{surveillant.idSurveillant};
+    </delete>
 
 </mapper>

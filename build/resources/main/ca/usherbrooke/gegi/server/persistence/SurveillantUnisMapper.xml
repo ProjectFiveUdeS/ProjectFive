@@ -31,9 +31,12 @@
     </select>
 
     <insert id="insert">
-      INSERT INTO surveillant (nom, prenom, id_surveillant)
-      VALUES (#{Surveillant.nom}, #{Surveillant.prenom},
-      #{Surveillant.idSurveillant});
+      INSERT INTO surveille
+      VALUES (#{Surveillant.idSurveillant}, #{Surveillant.idCoursExamen},
+      #{Surveillant.numeroLocal},
+      (SELECT date_examen FROM examen
+       WHERE examen.id_cours_examen = #{Surveillant.idCoursExamen}),
+      #{Surveillant.adapte});
     </insert>
 
 </mapper>
