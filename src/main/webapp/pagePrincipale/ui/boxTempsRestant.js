@@ -1,4 +1,3 @@
-import {labelHeureActuelle} from "./labelHeureActuelle.js";
 import {bulletTempsRestant} from "./barreTempsRestant.js";
 import {tempsRestantHeure} from "./tempsRestantHeure.js";
 

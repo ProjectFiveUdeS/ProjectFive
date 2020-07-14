@@ -64,6 +64,6 @@ webix.attachEvent(
         }*/
         //await gest.insertExamen(exam);
         setInterval(()=>clock.updateClock(),1000);
-
     }
 )();
+

@@ -4,7 +4,6 @@ import {buttonSelectSurveillant} from "./buttonSelectSurveillant.js";
 import {textSelectionSurveillant} from "./textSelectionSurveillant.js";
 import {labelHeureDebut} from "./labelHeureDebut.js";
 import {labelHeureFin} from "./labelHeureFin.js";
-import {labelHeureActuelle} from "./labelHeureActuelle.js";
 
 export const layoutEtage1 = new class Temps{
     getViewID(){

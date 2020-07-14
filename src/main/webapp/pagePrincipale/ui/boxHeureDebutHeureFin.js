@@ -1,4 +1,3 @@
-import {labelHeureDebut} from "./labelHeureDebut.js";
 import {labelHeureFin} from "./labelHeureFin.js";
 
 export const boxHeureDebutHeureFin = new class boxTemps{
