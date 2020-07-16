@@ -49,15 +49,22 @@ export const buttonSortie = new class Sortie{
                         idCoursExamen: surveille2.idCoursExamen,
                         dateExamen: ajd2
                     }
-                let test = await buttonSortie.selectSortieToilette(surveille2.idCoursExamen, ajd2);
-                    console.log(test);
-                if(test[0] == null){
-                    await buttonSortie.insertSortie(sortie);
-                    await datatableToilettes.loadSorties();
-                    await datatableTermine.loadSorties();
+                if($$("typeSortieChooser").getValue() == "Toilettes"){
+                    let test = await buttonSortie.selectSortieToilette(surveille2.idCoursExamen, ajd2);
+                    console.log(surveille2.idCoursExamen);
+                    console.log(ajd2);
+                    if(test[0] == null){
+                        await buttonSortie.insertSortie(sortie);
+                        await datatableToilettes.loadSorties();
+                    }
+                    else {
+                        webix.message({type: "failure", text: "Impossible d'insérer une sortie"});
+                        await datatableToilettes.loadSorties();
+                    }
                 }
-                else {
-                    webix.message({type: "failure", text: "Impossible d'insérer une sortie"});
+                else if($$("typeSortieChooser").getValue() == "Terminé"){
+                    await buttonSortie.insertSortie(sortie);
+                    await datatableTermine.loadSorties();
                 }
             }
         }
@@ -96,7 +103,7 @@ export const buttonSortie = new class Sortie{
         }
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("../api/selectToilette", envoi)
+            .get("../api/selectToiletteNull", envoi)
             .then(data => data.json())
             .catch((reason) => {
                 console.error(reason);

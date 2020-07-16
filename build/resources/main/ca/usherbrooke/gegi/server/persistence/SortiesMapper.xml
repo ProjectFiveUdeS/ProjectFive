@@ -27,6 +27,12 @@
       FROM sorties WHERE id_cours_examen = #{idCoursExamen} and date_examen = #{dateExamen}::timestamp ;
     </select>
 
+    <select id="selectToiletteNull" resultType="sorties">
+        SELECT *
+        FROM sorties
+        WHERE id_cours_examen = #{idCoursExamen} AND date_examen = #{dateExamen}::timestamp AND heure_fin IS NULL;
+    </select>
+
     <select id="selectAll" resultType="sorties">
       SELECT
        id_sortie,
@@ -48,7 +54,7 @@
         SELECT
         cip,
         heure_debut
-        FROM sorties WHERE type_sortie = 0;
+        FROM sorties WHERE type_sortie = 0 AND id_cours_examen = #{idCoursExamen} AND date_examen = #{dateExamen}::timestamp;
     </select>
 
     <select id="selectToilettesSurveillant" resultType="sorties">
@@ -56,7 +62,11 @@
         cip,
         heure_debut,
         heure_fin
-        FROM sorties WHERE type_sortie = 1;
+        FROM sorties WHERE type_sortie = 1 AND id_cours_examen = #{idCoursExamen} AND date_examen = #{dateExamen}::timestamp;
     </select>
+    
+    <insert id="insertRetour">
+		update sorties set heure_fin = #{sorties.heureFin}::timestamp where id_cours_examen = #{sorties.idCoursExamen} AND date_examen = #{sorties.dateExamen}::timestamp AND type_sortie = 0 AND heure_fin IS NULL;
+</insert>
 
 </mapper>

@@ -10,7 +10,7 @@ export const layoutEtage2 = new class Temps{
     get configuration() {
         return {
             view: this.getViewID(),
-            id: "layoutTemps",
+            id: "layoutEtage2",
             css: "huge_style",
             hidden:false,
             cols: [

@@ -1,6 +1,7 @@
 package ca.usherbrooke.gegi.server.presentation;
 import ca.usherbrooke.gegi.server.business.sorties;
 import ca.usherbrooke.gegi.server.persistence.SortiesMapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
 
 import javax.inject.Inject;
@@ -53,16 +54,16 @@ public class SortiesService {
     @GET
     @Path("sortiesFin")
     @Produces("application/json")
-    public List<sorties> selectFin(){
-        List<sorties> sorties = sortiesMapper.selectFin();
+    public List<sorties> selectFin(@QueryParam("idCoursExamen") String idCoursExamen, @QueryParam("dateExamen") String dateExamen){
+        List<sorties> sorties = sortiesMapper.selectFin(idCoursExamen, dateExamen);
         return sorties;
     }
 
     @GET
     @Path("sortiesToilettesSurveillant")
     @Produces("application/json")
-    public List<sorties> selectToilettesSurveillant(){
-        List<sorties> sorties = sortiesMapper.selectToilettesSurveillant();
+    public List<sorties> selectToilettesSurveillant(@QueryParam("idCoursExamen") String idCoursExamen, @QueryParam("dateExamen") String dateExamen){
+        List<sorties> sorties = sortiesMapper.selectToilettesSurveillant(idCoursExamen, dateExamen);
         return sorties;
     }
 
@@ -71,5 +72,14 @@ public class SortiesService {
     public void insertRetour(sorties sorties){
         sortiesMapper.insertRetour(sorties);
     }
+
+    @GET
+    @Path("selectToiletteNull")
+    @Produces("application/json")
+    public List<sorties> selectToiletteNull(@QueryParam("idCoursExamen") String idCoursExamen, @QueryParam("dateExamen") String dateExamen){
+        List<sorties> sorties = sortiesMapper.selectToiletteNull(idCoursExamen, dateExamen);
+        return sorties;
+    }
+
 
 }

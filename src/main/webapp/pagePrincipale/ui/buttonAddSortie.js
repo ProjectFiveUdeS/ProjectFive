@@ -8,7 +8,7 @@ export const buttonAddSortie = new class buttonAddSortieClass {
         return {
             view: this.getViewID(),
             id: "buttonAddSortieClass",
-            value: "Ajout sortie",
+            value: "Page surveillant",
             css: "webix_primary",
             width: 125,
             height: 125,

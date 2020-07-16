@@ -13,7 +13,7 @@ export const layoutEtage1 = new class Surveillant{
         return {
             view: this.getViewID(),
             css: "custom_style",
-            id: "layoutInformations",
+            id: "layoutEtage1",
             hidden:false,
             height: 70,
             cols: [
