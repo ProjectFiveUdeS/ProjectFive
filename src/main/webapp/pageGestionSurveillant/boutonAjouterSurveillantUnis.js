@@ -10,7 +10,7 @@ export const boutonAjouterSurveillantUnis = new class Surveillant{
         return {
             view: this.getViewID(),
             id: "buttonSurveillantUnisAjouter",
-            value: "Liée Surveillant",
+            value: "Lier Surveillant",
             css: "webix_primary",
             inputWidth: 150,
             click: function (id, event) {
