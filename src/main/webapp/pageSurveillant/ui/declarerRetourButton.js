@@ -1,7 +1,6 @@
 import {datatableToilettes} from "./datatableToilettes.js";
-import {datatableTermine} from "./datatableTermine.js";
 
-export const buttonSortie = new class Sortie{
+export const buttonRetour = new class Retour{
 
     getViewID(){
         return "button"
@@ -10,8 +9,8 @@ export const buttonSortie = new class Sortie{
     get configuration() {
         return {
             view: this.getViewID(),
-            id: "buttonSortie",
-            value: "Insérer Sortie",
+            id: "buttonRetour",
+            value: "Déclarer retour",
             css: "webix_primary",
             inputWidth: 150,
             click: async function (id, event) {
@@ -22,14 +21,6 @@ export const buttonSortie = new class Sortie{
                 jour = (jour < 10 ? "0" : "") + jour;
                 mois = (mois < 10 ? "0" : "") + mois;
                 let ajd2 = annee + "-" + mois + "-" + jour;
-                let typeSortieVar;
-                if($$("typeSortieChooser").getValue() == "Toilettes"){
-                    typeSortieVar = 1;
-                }
-                else if ($$("typeSortieChooser").getValue() == "Terminé")
-                {
-                    typeSortieVar = 0;
-                }
                 let currentTime = new Date ();
                 let heure = currentTime.getHours();
                 let min = currentTime.getMinutes();
@@ -39,37 +30,26 @@ export const buttonSortie = new class Sortie{
                 heure = (heure < 10 ? "0" : "") + heure;
                 let temps = "2020-07-20 " + heure+":"+min+":"+sec;
                 let surveillant = $$("textSelectionSurveillant").getValue();
-                let surveille = await buttonSortie.selectSurveille(surveillant, ajd2);
+                let surveille = await buttonRetour.selectSurveille(surveillant, ajd2);
                 let surveille2 = surveille[0];
-                    const sortie = {
-                        typeSortie: typeSortieVar,
-                        heureDebut: temps,
-                        heureFin: null,
-                        cip: $$("textCipSortie").getValue(),
-                        idCoursExamen: surveille2.idCoursExamen,
-                        dateExamen: ajd2
-                    }
-                let test = await buttonSortie.selectSortieToilette(surveille2.idCoursExamen, ajd2);
-                    console.log(test);
-                if(test[0] == null){
-                    await buttonSortie.insertSortie(sortie);
-                    await datatableToilettes.loadSorties();
-                    await datatableTermine.loadSorties();
-                }
-                else {
-                    webix.message({type: "failure", text: "Impossible d'insérer une sortie"});
-                }
+                await buttonRetour.insertRetour(surveille2.idCoursExamen, surveille2.dateExamen, temps);
+                await datatableToilettes.loadSorties();
             }
         }
     }
 
-    async insertSortie(sortie) {
+    async insertRetour(idExamen, dateExamen, temps) {
+        const envoi = {
+            idCoursExamen: idExamen,
+            dateExamen: dateExamen,
+            heureFin: temps
+        }
         webix
             .ajax()
             .headers({"Content-Type": "application/json"})
-            .put("../api/insertSorties", JSON.stringify(sortie))
+            .put("../api/insertRetour", envoi)
             .then(async data => {
-                webix.message({type: "success", text: "Sortie insérée"});
+                webix.message({type: "success", text: "Sortie modifiée"});
             })
             .catch((reason) => {
                 console.error(reason);

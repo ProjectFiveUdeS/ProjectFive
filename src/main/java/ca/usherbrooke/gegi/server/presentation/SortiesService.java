@@ -1,6 +1,8 @@
 package ca.usherbrooke.gegi.server.presentation;
 import ca.usherbrooke.gegi.server.business.sorties;
 import ca.usherbrooke.gegi.server.persistence.SortiesMapper;
+import org.apache.ibatis.annotations.Update;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
@@ -63,4 +65,11 @@ public class SortiesService {
         List<sorties> sorties = sortiesMapper.selectToilettesSurveillant();
         return sorties;
     }
+
+    @PUT
+    @Path("insertRetour")
+    public void insertRetour(sorties sorties){
+        sortiesMapper.insertRetour(sorties);
+    }
+
 }

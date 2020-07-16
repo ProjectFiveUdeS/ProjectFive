@@ -20,4 +20,5 @@ public interface SortiesMapper {
     void insertSorties(@Param("sorties") sorties sorties);
     List<sorties> selectFin();
     List<sorties> selectToilettesSurveillant();
+    void insertRetour(@Param("sorties") sorties sorties);
 }
