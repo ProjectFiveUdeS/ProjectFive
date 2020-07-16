@@ -23,16 +23,16 @@ public class SurveilleService {
     @Path("surveille")
     @Produces("application/json")
     public List<surveille> getSurveille(@QueryParam("idSurveillant") String idSurveillant, @QueryParam("dateExamen") String dateExamen) {
-        List<surveille> surveille = surveilleMapper.select(idSurveillant, dateExamen);
-        return surveille;
+        List<surveille> Surveille = surveilleMapper.select(idSurveillant, dateExamen);
+        return Surveille;
     }
 
     @GET
     @Path("tousSurveille")
     @Produces("application/json")
     public List<surveille> getTousSurveille(){
-        List<surveille> surveille = surveilleMapper.selectAll();
-        return surveille;
+        List<surveille> Surveille = surveilleMapper.selectAll();
+        return Surveille;
     }
 
     @PUT

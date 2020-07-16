@@ -34,7 +34,7 @@
     <insert id="insertExamen">
       insert into examen
       values (#{examen.idCoursExamen}, #{examen.nbrEtudiantsPrevu}, #{examen.nbrEtudiantsPresents},
-       #{examen.debut}::timestamp, #{examen.tiersTemps}::timestamp, #{examen.tiersTempsAdapte}::timestamp,
+       #{examen.debut}::timestamp, #{examen.debutAdapte}::timestamp, #{examen.tiersTemps}::timestamp, #{examen.tiersTempsAdapte}::timestamp,
        #{examen.fin}::timestamp, #{examen.finAdapte}::timestamp, #{examen.dateExamen}::timestamp);
     </insert>
 

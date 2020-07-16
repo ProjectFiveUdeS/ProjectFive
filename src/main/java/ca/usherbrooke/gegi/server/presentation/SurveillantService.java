@@ -1,6 +1,7 @@
 package ca.usherbrooke.gegi.server.presentation;
 import ca.usherbrooke.gegi.server.business.surveillant;
 import ca.usherbrooke.gegi.server.persistence.SurveillantMapper;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 
 import javax.inject.Inject;
@@ -23,25 +24,25 @@ public class SurveillantService {
     @GET
     @Path("surveillant")
     @Produces("application/json")
-    public List<surveillant> getSurveillant(@QueryParam("idSurveillant") String idSurveillant) {
-        List<surveillant> surveillant = surveillantMapper.select(idSurveillant);
-        return surveillant;
+    public List<surveillant> getSurveillant(@QueryParam("idSurveillant") int idSurveillant) {
+        List<surveillant> Surveillants = surveillantMapper.select(idSurveillant);
+        return Surveillants;
     }
 
     @GET
-    @Path("surveillants")
+    @Path("tousSurveillant")
     @Produces("application/json")
     public List<surveillant> getTousSurveillants(){
-        List<surveillant> surveillants = surveillantMapper.selectAll();
-        return surveillants;
+        List<surveillant> Surveillants = surveillantMapper.selectAll();
+        return Surveillants;
     }
 
     @GET
     @Path("surveillantSelectId")
     @Produces("application/json")
     public List<surveillant> selectId(@Param("nom") String nom, @Param("prenom") String prenom){
-        List<surveillant> surveillant = surveillantMapper.selectId(nom, prenom);
-        return surveillant;
+        List<surveillant> Surveillants = surveillantMapper.selectId(nom, prenom);
+        return Surveillants;
     }
 
     @PUT
@@ -49,4 +50,11 @@ public class SurveillantService {
     public void insertSorties(surveillant surveillant){
         surveillantMapper.insertSurveillant(surveillant);
     }
+
+    @DELETE
+    @Path("deleteSurveillantId")
+    public void deleteSurveillant(surveillant surveillant){
+        surveillantMapper.delete(surveillant);
+    }
+
 }
