@@ -9,8 +9,22 @@
        type_sortie,
        heure_debut,
        heure_fin,
-       cip
+       cip,
+       id_cours_examen,
+       date_examen
       FROM sorties WHERE id_sortie = #{idSortie};
+    </select>
+
+    <select id="selectToilette" resultType="sorties">
+      SELECT
+       id_sortie,
+       type_sortie,
+       heure_debut,
+       heure_fin,
+       cip,
+       id_cours_examen,
+       date_examen
+      FROM sorties WHERE id_cours_examen = #{idCoursExamen} and date_examen = #{dateExamen}::timestamp ;
     </select>
 
     <select id="selectAll" resultType="sorties">
@@ -19,13 +33,34 @@
        type_sortie,
        heure_debut,
        heure_fin,
-       cip
+       cip,
+       id_cours_examen,
+       date_examen
       FROM sorties;
     </select>
 
     <insert id="insertSorties">
       insert into sorties
-      values (((SELECT MAX(id_sortie) FROM sorties) + 1), #{sorties.typeSortie}, #{sorties.heureDebut}::timestamp, #{sorties.heureFin}::timestamp, #{sorties.cip});
+      values (((SELECT MAX(id_sortie) FROM sorties) + 1), #{sorties.typeSortie}, #{sorties.heureDebut}::timestamp, #{sorties.heureFin}::timestamp, #{sorties.cip}, #{sorties.idCoursExamen}, #{sorties.dateExamen}::timestamp);
     </insert>
+
+    <select id="selectFin" resultType="sorties">
+        SELECT
+        cip,
+        heure_debut
+        FROM sorties WHERE type_sortie = 0;
+    </select>
+
+    <select id="selectToilettesSurveillant" resultType="sorties">
+        SELECT
+        cip,
+        heure_debut,
+        heure_fin
+        FROM sorties WHERE type_sortie = 1;
+    </select>
+    
+    <insert id="insertRetour">
+		update sorties set heure_fin = #{sorties.heureFin}::timestamp where id_cours_examen = #{sorties.idCoursExamen} AND date_examen = #{sorties.dateExamen}::timestamp AND heure_fin IS 		NULL;
+</insert>
 
 </mapper>

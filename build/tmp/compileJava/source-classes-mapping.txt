@@ -1,0 +1,65 @@
+ca/usherbrooke/gegi/server/persistence/EtudiantMapper.java
+ ca.usherbrooke.gegi.server.persistence.EtudiantMapper
+ca/usherbrooke/gegi/server/presentation/SurveillantService.java
+ ca.usherbrooke.gegi.server.presentation.SurveillantService
+ca/usherbrooke/gegi/server/business/sorties.java
+ ca.usherbrooke.gegi.server.business.sorties
+ca/usherbrooke/gegi/server/injection/RestApplicationPathConfig.java
+ ca.usherbrooke.gegi.server.injection.RestApplicationPathConfig
+ca/usherbrooke/gegi/server/business/place.java
+ ca.usherbrooke.gegi.server.business.place
+ca/usherbrooke/gegi/server/business/etudiant.java
+ ca.usherbrooke.gegi.server.business.etudiant
+ca/usherbrooke/gegi/server/injection/MyBatisSqlSessionFactoryProducer.java
+ ca.usherbrooke.gegi.server.injection.MyBatisSqlSessionFactoryProducer
+ca/usherbrooke/gegi/server/business/surveille.java
+ ca.usherbrooke.gegi.server.business.surveille
+ca/usherbrooke/gegi/server/business/examen.java
+ ca.usherbrooke.gegi.server.business.examen
+ca/usherbrooke/gegi/server/business/assis_a.java
+ ca.usherbrooke.gegi.server.business.assis_a
+ca/usherbrooke/gegi/server/presentation/PlaceService.java
+ ca.usherbrooke.gegi.server.presentation.PlaceService
+ ca.usherbrooke.gegi.server.presentation.PlaceService$JSONObject
+ca/usherbrooke/gegi/server/presentation/LocalService.java
+ ca.usherbrooke.gegi.server.presentation.LocalService
+ ca.usherbrooke.gegi.server.presentation.LocalService$JSONObject
+ca/usherbrooke/gegi/server/business/local.java
+ ca.usherbrooke.gegi.server.business.local
+ca/usherbrooke/gegi/server/business/surveillant.java
+ ca.usherbrooke.gegi.server.business.surveillant
+ca/usherbrooke/gegi/server/persistence/SurveillantMapper.java
+ ca.usherbrooke.gegi.server.persistence.SurveillantMapper
+ca/usherbrooke/gegi/server/persistence/PlaceMapper.java
+ ca.usherbrooke.gegi.server.persistence.PlaceMapper
+ca/usherbrooke/gegi/server/persistence/SurveillantUnisMapper.java
+ ca.usherbrooke.gegi.server.persistence.SurveillantUnisMapper
+ca/usherbrooke/gegi/server/presentation/EtudiantService.java
+ ca.usherbrooke.gegi.server.presentation.EtudiantService
+ ca.usherbrooke.gegi.server.presentation.EtudiantService$JSONObject
+ca/usherbrooke/gegi/server/presentation/SurveillantUnisService.java
+ ca.usherbrooke.gegi.server.presentation.SurveillantUnisService
+ca/usherbrooke/gegi/server/injection/StaticCacheControlFilter.java
+ ca.usherbrooke.gegi.server.injection.StaticCacheControlFilter
+ca/usherbrooke/gegi/server/presentation/AssisAService.java
+ ca.usherbrooke.gegi.server.presentation.AssisAService
+ ca.usherbrooke.gegi.server.presentation.AssisAService$JSONObject
+ca/usherbrooke/gegi/server/business/surveillantUnis.java
+ ca.usherbrooke.gegi.server.business.surveillantUnis
+ca/usherbrooke/gegi/server/persistence/AssisAMapper.java
+ ca.usherbrooke.gegi.server.persistence.AssisAMapper
+ca/usherbrooke/gegi/server/persistence/LocalMapper.java
+ ca.usherbrooke.gegi.server.persistence.LocalMapper
+ca/usherbrooke/gegi/server/persistence/ExamenMapper.java
+ ca.usherbrooke.gegi.server.persistence.ExamenMapper
+ca/usherbrooke/gegi/server/presentation/SortiesService.java
+ ca.usherbrooke.gegi.server.presentation.SortiesService
+ca/usherbrooke/gegi/server/presentation/ExamenService.java
+ ca.usherbrooke.gegi.server.presentation.ExamenService
+ ca.usherbrooke.gegi.server.presentation.ExamenService$JSONObject
+ca/usherbrooke/gegi/server/persistence/SortiesMapper.java
+ ca.usherbrooke.gegi.server.persistence.SortiesMapper
+ca/usherbrooke/gegi/server/presentation/SurveilleService.java
+ ca.usherbrooke.gegi.server.presentation.SurveilleService
+ca/usherbrooke/gegi/server/persistence/SurveilleMapper.java
+ ca.usherbrooke.gegi.server.persistence.SurveilleMapper
