@@ -2,6 +2,7 @@ import {boxTempsRestant} from "./boxTempsRestant.js";
 import {labelHeureActuelle} from "./labelHeureActuelle.js";
 import {boxToilette} from "./boxToilette.js";
 import {boxSortieFin} from "./boxSortieFin.js";
+import {buttonAddSortie} from "./buttonAddSortie.js";
 
 export const layoutEtage2 = new class Temps{
     getViewID(){

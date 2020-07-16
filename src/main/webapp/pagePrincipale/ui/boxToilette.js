@@ -1,4 +1,6 @@
 import {sortieToiletteLabel} from "./sortieToiletteLabel.js";
+import {popupSortie} from "./popupSortie.js";
+import {buttonAddSortie} from "./buttonAddSortie.js";
 
 export const boxToilette = new class boxToiletteClass{
 
@@ -14,7 +16,8 @@ export const boxToilette = new class boxToiletteClass{
             height: 200,
             width: 700,
             cols: [
-                sortieToiletteLabel.configuration
+                sortieToiletteLabel.configuration,
+                buttonAddSortie.configuration
             ]
         }
     }

@@ -24,7 +24,7 @@
        cip,
        id_cours_examen,
        date_examen
-      FROM sorties WHERE heure_fin is null and id_cours_examen = #{idCoursExamen} and date_examen = #{dateExamen}::timestamp ;
+      FROM sorties WHERE id_cours_examen = #{idCoursExamen} and date_examen = #{dateExamen}::timestamp ;
     </select>
 
     <select id="selectAll" resultType="sorties">
