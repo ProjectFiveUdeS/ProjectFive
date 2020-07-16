@@ -47,4 +47,20 @@ public class SortiesService {
     public void insertSorties(sorties sorties){
         sortiesMapper.insertSorties(sorties);
     }
+
+    @GET
+    @Path("sortiesFin")
+    @Produces("application/json")
+    public List<sorties> selectFin(){
+        List<sorties> sorties = sortiesMapper.selectFin();
+        return sorties;
+    }
+
+    @GET
+    @Path("sortiesToilettesSurveillant")
+    @Produces("application/json")
+    public List<sorties> selectToilettesSurveillant(){
+        List<sorties> sorties = sortiesMapper.selectToilettesSurveillant();
+        return sorties;
+    }
 }

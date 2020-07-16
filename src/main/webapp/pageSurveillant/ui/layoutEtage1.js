@@ -1,8 +1,6 @@
 import {cipSortieText} from "./cipSortieText.js";
 import {buttonSortie} from "./insertSortieButton.js";
 import {typeSortieChooser} from "./typeSortieChooser.js";
-import {datatableTermine} from "./datatableTermine.js";
-import {datatableToilettes} from "./datatableToilettes.js";
 
 export const layoutEtage1 = new class Surveillant{
     getViewID(){
@@ -20,8 +18,7 @@ export const layoutEtage1 = new class Surveillant{
                 cipSortieText.configuration,
                 typeSortieChooser.configuration,
                 buttonSortie.configuration,
-                datatableTermine.configuration,
-                datatableToilettes.configuration
+
             ],
         }
     }

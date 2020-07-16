@@ -44,4 +44,19 @@
       values (((SELECT MAX(id_sortie) FROM sorties) + 1), #{sorties.typeSortie}, #{sorties.heureDebut}::timestamp, #{sorties.heureFin}::timestamp, #{sorties.cip}, #{sorties.idCoursExamen}, #{sorties.dateExamen}::timestamp);
     </insert>
 
+    <select id="selectFin" resultType="sorties">
+        SELECT
+        cip,
+        heure_debut
+        FROM sorties WHERE type_sortie = 0;
+    </select>
+
+    <select id="selectToilettesSurveillant" resultType="sorties">
+        SELECT
+        cip,
+        heure_debut,
+        heure_fin
+        FROM sorties WHERE type_sortie = 1;
+    </select>
+
 </mapper>

@@ -1,4 +1,6 @@
 import {layoutPagePrincipale} from "./ui/layoutPageSurveillant.js";
+import {datatableTermine} from "./ui/datatableTermine.js";
+import {datatableToilettes} from "./ui/datatableToilettes.js";
 
 webix.attachEvent(
     'onAjaxError',
@@ -26,6 +28,8 @@ webix.attachEvent(
 (async () => {
         webix.i18n.setLocale('fr-FR');   // set notation
         webix.ui(layoutPagePrincipale.configuration);  // établi les grandes lignes de l'interface usager
+        await datatableTermine.loadSorties();
+        await datatableToilettes.loadSorties();
 
     }
 )();

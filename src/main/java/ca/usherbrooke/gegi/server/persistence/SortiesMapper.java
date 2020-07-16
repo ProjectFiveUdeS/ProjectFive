@@ -18,4 +18,6 @@ public interface SortiesMapper {
     List<sorties> selectAll();
     List<sorties> selectToilette(@Param("idCoursExamen") String idCoursExamen, @Param("dateExamen") String dateExamen);
     void insertSorties(@Param("sorties") sorties sorties);
+    List<sorties> selectFin();
+    List<sorties> selectToilettesSurveillant();
 }

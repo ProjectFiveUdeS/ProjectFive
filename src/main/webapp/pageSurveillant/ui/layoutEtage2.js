@@ -1,3 +1,5 @@
+import {datatableTermine} from "./datatableTermine.js";
+import {datatableToilettes} from "./datatableToilettes.js";
 
 
 export const layoutEtage2 = new class Temps{
@@ -15,7 +17,8 @@ export const layoutEtage2 = new class Temps{
                 {},
                 {
                     rows: [
-
+                        datatableTermine.configuration,
+                        datatableToilettes.configuration
                     ],
                 },
                 {}

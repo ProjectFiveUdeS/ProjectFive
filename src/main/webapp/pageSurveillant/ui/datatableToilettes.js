@@ -21,13 +21,13 @@ export const datatableToilettes = new class Datatable {
                     fillspace: true,
                 },
                 {
-                    id: "heure_debut",
+                    id: "heureDebut",
                     header: "Heure du départ",
                     width: 200,
                     fillspace: true,
                 },
                 {
-                    id: "heure_fin",
+                    id: "heureFin",
                     header: "Heure du retour",
                     width: 200,
                     fillspace: true,
@@ -38,10 +38,9 @@ export const datatableToilettes = new class Datatable {
 
     async loadSorties() {
         //$$("main").showProgress({type: 'top'});
-        let cip = {cip:"girm1235"}
         return webix.ajax()
             .headers({"Content-Type": "application/json"})
-            .get("api/etudiant", cip)
+            .get("../api/sortiesToilettesSurveillant")
             .then(data => data.json())
             .then(data => {
                 $$(datatableToilettes.id).clearAll();
@@ -51,11 +50,6 @@ export const datatableToilettes = new class Datatable {
             })
             .catch((reason) => {
                 console.error(reason);
-                webix.modalbox({
-                    title: 'Voir des étudiants',
-                    text: "Paramètres inconsistants pour accéder à la base de données de présence",
-                    type: 'alert-error',
-                });
             });
     }
 }
