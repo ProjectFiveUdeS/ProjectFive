@@ -7,7 +7,7 @@ export const datatableLabelTermines = new class datatableLabel{
     get configuration(){
         return{
             view: this.getViewID(),
-            label: "Étudiants ayant terminés",
+            label: "Étudiants ayant terminé",
             id:"tableau_termines",
             align: "center",
             hidden:false
