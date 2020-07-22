@@ -13,7 +13,7 @@ export const bandeau = new class Bandeau  {
             hidden: false,
             elements: [{
                 view: "label",
-                height:123,
+                height:150,
                 label: '<img src="../images/bandeau.png" width="100%">'
             },
 

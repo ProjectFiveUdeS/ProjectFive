@@ -1,6 +1,6 @@
-import {datatableSurveillant} from "./datatableSurveillant.js";
 import {layoutSurveillantBouton} from "./layoutSurveillantBouton.js";
-import {datatableExamen} from "./datatableExamen.js";
+import {layoutDatatableExamen} from "./layoutDatatableExamen.js";
+import {layoutDatatableSurveillant} from "./layoutDatatableSurveillant.js";
 
 export const layoutSurveillant = new class  {
 
@@ -15,8 +15,8 @@ export const layoutSurveillant = new class  {
             hidden:false,
             width:500,
             elements: [
-                datatableExamen.configuration,
-                datatableSurveillant.configuration,
+                layoutDatatableExamen.configuration,
+                layoutDatatableSurveillant.configuration,
                 layoutSurveillantBouton.configuration,
             ]
         }
