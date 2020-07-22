@@ -13,7 +13,7 @@ export const boutonEnleverSurveillant = new class Surveillant{
             value: "Enlever Surveillant",
             css: "webix_primary",
             inputWidth: 150,
-            width:300,
+            height: 50,
             click: function (id, event) {
                 const surveillant = {
                     idSurveillant : $$("textSurveillantId").getValue(),

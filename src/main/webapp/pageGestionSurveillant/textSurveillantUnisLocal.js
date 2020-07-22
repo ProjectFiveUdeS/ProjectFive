@@ -8,7 +8,6 @@ export const textSurveillantUnisLocal = new class localSurveillant{
         return{
             view:this.getViewID(),
             id: "textSurveillantLocal",
-            value:"local",
             label:"Local",
             labelWidth: 'auto'
         }

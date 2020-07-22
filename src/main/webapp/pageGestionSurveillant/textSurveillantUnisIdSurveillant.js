@@ -8,7 +8,6 @@ export const textSurveillantUnisIdSurveillant = new class idSurveillantSurveilla
         return{
             view:this.getViewID(),
             id: "textSurveillantIdSurveillant",
-            value:"id surveillant",
             label:"ID de surveillant",
             labelWidth: 'auto'
         }

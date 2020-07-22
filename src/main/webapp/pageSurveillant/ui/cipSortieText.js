@@ -8,8 +8,7 @@ export const cipSortieText = new class cipSortie{
         return{
             view:this.getViewID(),
             id: "textCipSortie",
-            value:"cip",
-            label:"cip"
+            placeholder:"CIP étudiant"
         }
     }
 }

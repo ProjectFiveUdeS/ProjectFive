@@ -17,8 +17,7 @@ export const typeSortieChooser = new class typeSortie{
                     id: "Terminé",
                     value: "Terminé"
                 }
-            ],
-            label:"Type Sortie"
+            ]
         }
     }
 }

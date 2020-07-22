@@ -9,8 +9,7 @@ export const textSelectionSurveillant = new class selectionSurveillant{
             css: "my_style",
             view:this.getViewID(),
             id: "textSelectionSurveillant",
-            value:"",
-            width: 100
+            placeholder: "CIP surveillant"
         }
     }
 }

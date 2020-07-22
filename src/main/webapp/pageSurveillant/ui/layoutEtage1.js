@@ -12,10 +12,9 @@ export const layoutEtage1 = new class Surveillant{
     get configuration() {
         return {
             view: this.getViewID(),
-            css: "custom_style",
             id: "layoutEtage1",
             hidden:false,
-            height: 70,
+            height: 80,
             cols: [
                 cipSortieText.configuration,
                 textSelectionSurveillant.configuration,

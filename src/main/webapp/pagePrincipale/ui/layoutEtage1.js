@@ -13,7 +13,6 @@ export const layoutEtage1 = new class Temps{
     get configuration() {
         return {
             view: this.getViewID(),
-            css: "custom_style",
             id: "layoutInformations",
             hidden:false,
             height: 70,

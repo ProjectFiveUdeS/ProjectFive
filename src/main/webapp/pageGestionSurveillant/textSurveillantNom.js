@@ -8,7 +8,6 @@ export const textSurveillantNom = new class nomSurveillant{
         return{
             view:this.getViewID(),
             id: "textSurveillantNom",
-            value:"nom",
             label:"Nom du surveilant(e)",
             labelWidth: 'auto'
         }
