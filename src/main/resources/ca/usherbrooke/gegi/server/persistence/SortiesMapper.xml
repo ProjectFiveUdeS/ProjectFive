@@ -66,7 +66,7 @@
     </select>
     
     <insert id="insertRetour">
-		update sorties set heure_fin = #{sorties.heureFin}::timestamp where id_cours_examen = #{sorties.idCoursExamen} AND date_examen = #{sorties.dateExamen}::timestamp AND type_sortie = 0 AND heure_fin IS NULL;
+		update sorties set heure_fin = #{sorties.heureFin}::timestamp where id_cours_examen = #{sorties.idCoursExamen} AND date_examen = #{sorties.dateExamen}::timestamp AND type_sortie = 1 AND heure_fin IS NULL;
 </insert>
 
 </mapper>

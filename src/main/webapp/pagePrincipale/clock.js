@@ -109,12 +109,12 @@ export class Clock{
             {
                 if(a[i] != null)
                 {
-                    if(a[i].heureFin == null)
+                    if(a[i].heureFin == null && a[i].typeSortie == 1)
                     {
                         canGoToilette = 0;
                         canFinishExam = 0;
                     }
-                    else if(a[i].heureFin != null && a[i].typeSortie == 2)
+                    else if(a[i].heureFin != null && a[i].typeSortie == 1)
                     {
                         canGoToilette = 0;
                     }

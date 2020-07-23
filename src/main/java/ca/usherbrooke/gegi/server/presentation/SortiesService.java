@@ -71,6 +71,7 @@ public class SortiesService {
     @Path("insertRetour")
     public void insertRetour(sorties sorties){
         sortiesMapper.insertRetour(sorties);
+        System.out.println(sorties);
     }
 
     @GET
