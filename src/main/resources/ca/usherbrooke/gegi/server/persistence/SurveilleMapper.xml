@@ -8,7 +8,8 @@
        id_surveillant,
        id_cours_examen,
        numero_local,
-       date_examen
+       date_examen,
+       adapte
       FROM surveille WHERE id_surveillant = #{idSurveillant} AND date_examen = #{dateExamen}::timestamp;
     </select>
 
@@ -16,7 +17,8 @@
       SELECT
 	  id_cours_examen,
 	  numero_local,
-	  date_examen
+	  date_examen,
+	  adapte
       FROM surveille, surveillant
 	  WHERE surveille.id_surveillant = surveillant.id_surveillant;
     </select>

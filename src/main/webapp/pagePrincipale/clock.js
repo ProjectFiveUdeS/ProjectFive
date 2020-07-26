@@ -114,7 +114,7 @@ export class Clock{
                         canGoToilette = 0;
                         canFinishExam = 0;
                     }
-                    else if(a[i].heureFin != null && a[i].typeSortie == 1)
+                    else if(a[i].typeSortie == 0)
                     {
                         canGoToilette = 0;
                     }
